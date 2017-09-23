@@ -28,4 +28,4 @@ drawing.add(PolyLine(list(zip(times, high)), storkeColor=colors.red))
 drawing.add(PolyLine(list(zip(times, low)), storkeColor=colors.green))
 drawing.add(String(65, 115, 'Sunspots', fontSize = 18, fillColor = colors.red))
 
-renderPDF.drawToFile(drawing, 'report1.pdf', 'Sunspots')
+renderPDF.drawToFile(drawing, 'report1.pdf')
