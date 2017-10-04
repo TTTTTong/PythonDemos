@@ -1,18 +1,12 @@
 from random import randint
 from PIL import Image, ImageFilter, ImageDraw, ImageFont
 
-
 def rdmChar():
     return chr(randint(65, 90))
-
 # 随机颜色1
-
-
 def rdmColor():
     return randint(64, 255), randint(64, 255), randint(64, 255)
 # 随机颜色2
-
-
 def rdmColor2():
     return randint(32, 127), randint(32, 127), randint(32, 127)
 
