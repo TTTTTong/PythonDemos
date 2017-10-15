@@ -83,6 +83,5 @@ def guess_charset(msg):
             charset = content_type[pos+8:].strip()
     return charset
 
-
 print_info(msg)
 server.quit()

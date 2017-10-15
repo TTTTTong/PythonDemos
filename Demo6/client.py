@@ -1,5 +1,3 @@
-#coding=utf-8
-
 from xmlrpc.server import SimpleXMLRPCServer, Fault
 from xmlrpc.client import ServerProxy
 from cmd import Cmd
@@ -11,7 +9,6 @@ from Demo6.server import UNHANDLED, Node
 from threading import Thread
 from time import sleep
 
-import sys
 
 HEAD_START = 0.1
 SECRET_LENGTH = 100

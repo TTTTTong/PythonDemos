@@ -2,21 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5583f1d8-1abe-4804-a362-ad63d3b74a8b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Demo6/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Demo6/file2/test.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Demo6/server.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Demo6/urls.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/funny/email/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/funny/email/popRecieveMail.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/funny/email/sendMail.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/funny/socket/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/funny/socket/client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/funny/socket/server.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/guiTest.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/test1.py" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo10/1111.JPG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo10/212.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo10/backgroud.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Base/socket/client.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Base/sql/alchemyTest.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Funny/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Funny/email/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Funny/identifyCode/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo10/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo10/weight.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/appliTest.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/server.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/funny/socket/client.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/funny/IndentifyCode.py" afterPath="$PROJECT_DIR$/funny/IndentifyCode.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/test.py" afterPath="$PROJECT_DIR$/Demo6/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Demo6/client.py" afterPath="$PROJECT_DIR$/Demo6/client.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Demo6/server.py" afterPath="$PROJECT_DIR$/Demo6/server.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/funny/IndentifyCode.py" afterPath="$PROJECT_DIR$/Funny/identifyCode/IndentifyCode.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/funny/__init__.py" afterPath="$PROJECT_DIR$/Base/sql/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/funny/email/__init__.py" afterPath="$PROJECT_DIR$/Base/socket/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/funny/email/popRecieveMail.py" afterPath="$PROJECT_DIR$/Funny/email/popRecieveMail.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/funny/email/sendMail.py" afterPath="$PROJECT_DIR$/Funny/email/sendMail.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/funny/identify code.jpg" afterPath="$PROJECT_DIR$/Funny/identifyCode/identify code.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/funny/socket/__init__.py" afterPath="$PROJECT_DIR$/Base/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/funny/socket/server.py" afterPath="$PROJECT_DIR$/Base/socket/server.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/guiTest.py" afterPath="$PROJECT_DIR$/Funny/guiTest.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,120 +39,77 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/PyCharmWorkSpace$one.coverage" NAME="one Coverage Results" MODIFIED="1505637045972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Demo2" />
     <SUITE FILE_PATH="coverage/PyCharmWorkSpace$IndentifyCode.coverage" NAME="IndentifyCode Coverage Results" MODIFIED="1506612586697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/funny" />
+    <SUITE FILE_PATH="coverage/PyCharmWorkSpace$appliTest.coverage" NAME="appliTest Coverage Results" MODIFIED="1507439600059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/PyCharmWorkSpace$emailTest.coverage" NAME="emailTest Coverage Results" MODIFIED="1507036857977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/funny/email" />
+    <SUITE FILE_PATH="coverage/PyCharmWorkSpace$weight.coverage" NAME="weight Coverage Results" MODIFIED="1507555206651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo10" />
     <SUITE FILE_PATH="coverage/PyCharmWorkSpace$wesite.coverage" NAME="wesite Coverage Results" MODIFIED="1505220937946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo3" />
+    <SUITE FILE_PATH="coverage/PyCharmWorkSpace$sqlAlchemy.coverage" NAME="sqlAlchemy Coverage Results" MODIFIED="1507181050592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/PyCharmWorkSpace$server__2_.coverage" NAME="server (2) Coverage Results" MODIFIED="1507552368656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/PyCharmWorkSpace$spot.coverage" NAME="spot Coverage Results" MODIFIED="1506176975863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Demo2" />
     <SUITE FILE_PATH="coverage/PyCharmWorkSpace$chatServer.coverage" NAME="chatServer Coverage Results" MODIFIED="1505403187540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/demo5" />
+    <SUITE FILE_PATH="coverage/PyCharmWorkSpace$server__1_.coverage" NAME="server (1) Coverage Results" MODIFIED="1507355507865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyCharmWorkSpace$alchemyTest.coverage" NAME="alchemyTest Coverage Results" MODIFIED="1507182820997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Base/sql" />
     <SUITE FILE_PATH="coverage/PyCharmWorkSpace$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1507018163564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/PyCharmWorkSpace$test.coverage" NAME="test Coverage Results" MODIFIED="1506166631058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Demo2" />
-    <SUITE FILE_PATH="coverage/PyCharmWorkSpace$guiTest.coverage" NAME="guiTest Coverage Results" MODIFIED="1507016898826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/PyCharmWorkSpace$test.coverage" NAME="test Coverage Results" MODIFIED="1507296405482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/PyCharmWorkSpace$guiTest.coverage" NAME="guiTest Coverage Results" MODIFIED="1507107245947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/PyCharmWorkSpace$Eight_Queens.coverage" NAME="Eight Queens Coverage Results" MODIFIED="1508081332660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Funny" />
     <SUITE FILE_PATH="coverage/PyCharmWorkSpace$test__2_.coverage" NAME="test (2) Coverage Results" MODIFIED="1507027389309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/PyCharmWorkSpace$server.coverage" NAME="server Coverage Results" MODIFIED="1507302545609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/PyCharmWorkSpace$zipTest.coverage" NAME="zipTest Coverage Results" MODIFIED="1506145455394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Demo2" />
     <SUITE FILE_PATH="coverage/PyCharmWorkSpace$spot3.coverage" NAME="spot3 Coverage Results" MODIFIED="1506169764607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Demo2" />
     <SUITE FILE_PATH="coverage/PyCharmWorkSpace$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1506432946933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Demo4" />
     <SUITE FILE_PATH="coverage/PyCharmWorkSpace$Pop.coverage" NAME="Pop Coverage Results" MODIFIED="1507100414607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/funny/email" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sendMail.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/funny/email/sendMail.py">
+      <file leaf-file-name="weight.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo10/weight.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="891">
-              <caret line="39" column="17" lean-forward="false" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+            <state relative-caret-position="217">
+              <caret line="56" column="18" lean-forward="false" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
               <folding>
-                <element signature="e#24#60#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="popRecieveMail.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/funny/email/popRecieveMail.py">
+      <file leaf-file-name="Eight Queens.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Funny/Eight Queens.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/email/parser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1539">
-              <caret line="60" column="43" lean-forward="false" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="43" />
+            <state relative-caret-position="27">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parse.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/urllib/parse.py">
+      <file leaf-file-name="random.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/random.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3402">
-              <caret line="128" column="8" lean-forward="false" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
+            <state relative-caret-position="19386">
+              <caret line="724" column="25" lean-forward="false" selection-start-line="724" selection-start-column="25" selection-end-line="724" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="poplib.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/poplib.py">
+      <file leaf-file-name="dictconfig.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/pip/compat/dictconfig.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7290">
-              <caret line="272" column="73" lean-forward="false" selection-start-line="272" selection-start-column="73" selection-end-line="272" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="encoders.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/email/encoders.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="builtins.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-766396262/builtins.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="4861" column="8" lean-forward="false" selection-start-line="4861" selection-start-column="8" selection-end-line="4861" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/email/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1620">
-              <caret line="75" column="4" lean-forward="false" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_parseaddr.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/email/_parseaddr.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13392">
-              <caret line="496" column="8" lean-forward="false" selection-start-line="496" selection-start-column="8" selection-end-line="496" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="message.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/email/message.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="370" column="8" lean-forward="false" selection-start-line="370" selection-start-column="8" selection-end-line="370" selection-end-column="8" />
+            <state relative-caret-position="5940">
+              <caret line="227" column="8" lean-forward="false" selection-start-line="227" selection-start-column="8" selection-end-line="227" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -162,6 +130,8 @@
       <find>enter code</find>
       <find>blur</find>
       <find>acce</find>
+      <find>5000</find>
+      <find>esca</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -194,17 +164,28 @@
         <option value="$PROJECT_DIR$/Demo4/test.py" />
         <option value="$PROJECT_DIR$/Demo6/file2/test.txt" />
         <option value="$PROJECT_DIR$/Demo6/urls.txt" />
-        <option value="$PROJECT_DIR$/Demo6/client.py" />
-        <option value="$PROJECT_DIR$/Demo6/server.py" />
-        <option value="$PROJECT_DIR$/test/guiTest.py" />
-        <option value="$PROJECT_DIR$/test/test.py" />
         <option value="$PROJECT_DIR$/test/test1.py" />
         <option value="$PROJECT_DIR$/funny/IndentifyCode.py" />
         <option value="$PROJECT_DIR$/funny/socket/server.py" />
         <option value="$PROJECT_DIR$/funny/email/emailTest.py" />
         <option value="$PROJECT_DIR$/funny/email/sendMail.py" />
         <option value="$PROJECT_DIR$/funny/email/Pop.py" />
+        <option value="$PROJECT_DIR$/test/guiTest.py" />
         <option value="$PROJECT_DIR$/funny/email/popRecieveMail.py" />
+        <option value="$PROJECT_DIR$/funny/guiTest.py" />
+        <option value="$PROJECT_DIR$/test/sqlAlchemy.py" />
+        <option value="$PROJECT_DIR$/Base/sql/alchemyTest.py" />
+        <option value="$PROJECT_DIR$/Demo6/server.py" />
+        <option value="$PROJECT_DIR$/Demo6/client.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/server.py" />
+        <option value="$PROJECT_DIR$/test/test.py" />
+        <option value="$PROJECT_DIR$/test/222.py" />
+        <option value="$PROJECT_DIR$/test/11.py" />
+        <option value="$PROJECT_DIR$/test/appliTest.py" />
+        <option value="$PROJECT_DIR$/test/server.py" />
+        <option value="$PROJECT_DIR$/demo10/weight.py" />
+        <option value="$PROJECT_DIR$/Funny/Eight Queens.py" />
       </list>
     </option>
   </component>
@@ -215,10 +196,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="553" />
-    <option name="y" value="37" />
+    <option name="x" value="590" />
+    <option name="y" value="29" />
     <option name="width" value="999" />
-    <option name="height" value="682" />
+    <option name="height" value="684" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -250,23 +231,7 @@
             <path>
               <item name="PyCharmWorkSpace" type="b2602c69:ProjectViewProjectNode" />
               <item name="PyCharmWorkSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="demo5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PyCharmWorkSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PyCharmWorkSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="funny" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PyCharmWorkSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PyCharmWorkSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="funny" type="462c0819:PsiDirectoryNode" />
-              <item name="email" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PyCharmWorkSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PyCharmWorkSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="Funny" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PyCharmWorkSpace" type="b2602c69:ProjectViewProjectNode" />
@@ -281,17 +246,20 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
-    <property name="SearchEverywhereHistoryKey" value="Library&#9;null&#9;null&#10;Fonts&#9;FILE&#9;file://C:/Users/TONG/AppData/Local/Programs/Python/Python35/Lib/site-packages/reportlab/lib/fonts.py&#10;FONT&#9;FILE&#9;file://C:/Users/TONG/AppData/Local/Programs/Python/Python35/Lib/site-packages/PIL/ImageFont.py&#10;urlop&#9;null&#9;null&#10;URLop&#9;null&#9;null&#10;urlopen&#9;null&#9;null" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/test1.py" />
-    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/test/test1.py" />
+    <property name="SearchEverywhereHistoryKey" value="mysql&#9;null&#9;null&#10;SQLite&#9;null&#9;null&#10;Library&#9;null&#9;null&#10;Fonts&#9;FILE&#9;file://C:/Users/TONG/AppData/Local/Programs/Python/Python35/Lib/site-packages/reportlab/lib/fonts.py&#10;FONT&#9;FILE&#9;file://C:/Users/TONG/AppData/Local/Programs/Python/Python35/Lib/site-packages/PIL/ImageFont.py&#10;urlop&#9;null&#9;null&#10;URLop&#9;null&#9;null&#10;urlopen&#9;null&#9;null" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/test/11.py" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\PyCharmWorkSpace" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\PyCharmWorkSpace\funny\socket" />
-      <recent name="D:\PyCharmWorkSpace\Demo1" />
+      <recent name="D:\PyCharmWorkSpace\demo10" />
+      <recent name="D:\PyCharmWorkSpace\test" />
+      <recent name="D:\PyCharmWorkSpace" />
+      <recent name="D:\PyCharmWorkSpace\Base\sql" />
+      <recent name="D:\PyCharmWorkSpace\Base" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\PyCharmWorkSpace" />
     </key>
   </component>
@@ -307,44 +275,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Pop">
-    <configuration name="Pop" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.Eight Queens">
+    <configuration name="Eight Queens" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/funny/email" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Funny" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PyCharmWorkSpace" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\PyCharmWorkSpace\funny\email\popRecieveMail.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Funny/Eight Queens.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="emailTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/funny/email" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="PyCharmWorkSpace" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\PyCharmWorkSpace\funny\email\sendMail.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="guiTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="appliTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -357,12 +307,30 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PyCharmWorkSpace" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/guiTest.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/appliTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="test (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="server (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="PyCharmWorkSpace" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\PyCharmWorkSpace\test\server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="server (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -375,43 +343,43 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PyCharmWorkSpace" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\PyCharmWorkSpace\funny\socket\client.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/server.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="weight" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/demo10" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PyCharmWorkSpace" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\PyCharmWorkSpace\funny\socket\server.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo10/weight.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.test (2)" />
-      <item index="1" class="java.lang.String" itemvalue="Python.test1" />
-      <item index="2" class="java.lang.String" itemvalue="Python.guiTest" />
-      <item index="3" class="java.lang.String" itemvalue="Python.emailTest" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Pop" />
+      <item index="0" class="java.lang.String" itemvalue="Python.server (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.server (2)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.appliTest" />
+      <item index="3" class="java.lang.String" itemvalue="Python.weight" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Eight Queens" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Pop" />
-        <item index="1" class="java.lang.String" itemvalue="Python.emailTest" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test (2)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test1" />
-        <item index="4" class="java.lang.String" itemvalue="Python.guiTest" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Eight Queens" />
+        <item index="1" class="java.lang.String" itemvalue="Python.weight" />
+        <item index="2" class="java.lang.String" itemvalue="Python.server (2)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.appliTest" />
+        <item index="4" class="java.lang.String" itemvalue="Python.server (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -429,18 +397,27 @@
       <option name="presentableId" value="Default" />
       <updated>2230124649349</updated>
     </task>
+    <task id="LOCAL-00001" summary="0.0">
+      <created>1507106071231</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1507106071231</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22844176" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2934947" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31442463" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43598056" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33873582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26094005" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29425114" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -462,19 +439,19 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46800733" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31442463" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43598056" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33873582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25026625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29392973" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31604537" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29425114" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24919094" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -510,155 +487,17 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="0.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.0" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/guiTest.py</url>
-          <line>6</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Demo2/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/urllib/request.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44388">
-          <caret line="1669" column="8" lean-forward="false" selection-start-line="1669" selection-start-column="8" selection-end-line="1669" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/reportlab/graphics/shapes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38502">
-          <caret line="1435" column="8" lean-forward="false" selection-start-line="1435" selection-start-column="8" selection-end-line="1435" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Demo2/spot3.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/socket.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19602">
-          <caret line="730" column="17" lean-forward="false" selection-start-line="730" selection-start-column="17" selection-end-line="730" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/datetime.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/datetime.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17253">
-          <caret line="640" column="6" lean-forward="false" selection-start-line="640" selection-start-column="6" selection-end-line="640" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/nntplib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19818">
-          <caret line="738" column="32" lean-forward="false" selection-start-line="738" selection-start-column="32" selection-end-line="738" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Demo2/spot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo5/simpleClient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="39" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Demo4/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-766396262/itertools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10665">
-          <caret line="395" column="34" lean-forward="false" selection-start-line="395" selection-start-column="34" selection-end-line="395" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-766396262/_io.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36423">
-          <caret line="1349" column="30" lean-forward="false" selection-start-line="1349" selection-start-column="30" selection-end-line="1349" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo3/wesite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/aaa.jpg" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/PIL/IcoImagePlugin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="271" column="13" lean-forward="false" selection-start-line="271" selection-start-column="13" selection-end-line="271" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/PIL/CurImagePlugin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="73" column="13" lean-forward="false" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/PIL/ImageFilter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="203" column="0" lean-forward="false" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/random.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19332">
-          <caret line="722" column="19" lean-forward="false" selection-start-line="722" selection-start-column="19" selection-end-line="722" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/PIL/ImageFont.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6183">
-          <caret line="232" column="13" lean-forward="false" selection-start-line="232" selection-start-column="13" selection-end-line="232" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/setuptools/extension.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/reportlab/lib/fonts.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -695,13 +534,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Demo6/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1458">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Demo6/file2/test.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -709,18 +541,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Demo6/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="69" column="35" lean-forward="false" selection-start-line="69" selection-start-column="35" selection-end-line="69" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/tkinter/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
           <caret line="2504" column="8" lean-forward="false" selection-start-line="2504" selection-start-column="8" selection-end-line="2504" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,38 +562,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/guiTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="11" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funny/socket/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funny/socket/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/funny/IndentifyCode.py">
+    <entry file="file://$PROJECT_DIR$/Funny/identifyCode/IndentifyCode.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/funny/identify code.jpg">
+    <entry file="file://$PROJECT_DIR$/Funny/identifyCode/identify code.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -792,7 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="179" column="8" lean-forward="false" selection-start-line="179" selection-start-column="8" selection-end-line="179" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -800,7 +599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13392">
           <caret line="496" column="8" lean-forward="false" selection-start-line="496" selection-start-column="8" selection-end-line="496" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,7 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1620">
           <caret line="75" column="4" lean-forward="false" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -816,17 +613,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/funny/email/sendMail.py">
+    <entry file="file://$PROJECT_DIR$/Funny/email/sendMail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
+        <state relative-caret-position="0">
           <caret line="39" column="17" lean-forward="false" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-          <folding>
-            <element signature="e#24#60#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -834,7 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3402">
           <caret line="128" column="8" lean-forward="false" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -842,7 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1539">
           <caret line="60" column="43" lean-forward="false" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -850,7 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7290">
           <caret line="272" column="73" lean-forward="false" selection-start-line="272" selection-start-column="73" selection-end-line="272" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -858,25 +648,179 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="370" column="8" lean-forward="false" selection-start-line="370" selection-start-column="8" selection-end-line="370" selection-end-column="8" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Funny/email/popRecieveMail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/sqlite3/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Funny/guiTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="18" column="36" lean-forward="false" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/sqlalchemy/ext/declarative/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2184">
+          <caret line="248" column="4" lean-forward="false" selection-start-line="248" selection-start-column="4" selection-end-line="248" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base/sql/alchemyTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base/socket/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Base/socket/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Demo6/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/wsgiref/simple_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="67" column="13" lean-forward="false" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test.py" />
+    <entry file="file://$PROJECT_DIR$/Demo6/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1235">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="834" column="27" lean-forward="false" selection-start-line="834" selection-start-column="23" selection-end-line="834" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/222.py" />
+    <entry file="file://$PROJECT_DIR$/test/11.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/asyncio/streams.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8397">
+          <caret line="311" column="8" lean-forward="false" selection-start-line="311" selection-start-column="8" selection-end-line="311" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-766396262/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="4861" column="8" lean-forward="false" selection-start-line="4861" selection-start-column="8" selection-end-line="4861" selection-end-column="8" />
+        <state relative-caret-position="133947">
+          <caret line="4961" column="17" lean-forward="false" selection-start-line="4961" selection-start-column="17" selection-end-line="4961" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/funny/email/popRecieveMail.py">
+    <entry file="file://$PROJECT_DIR$/test/appliTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+        <state relative-caret-position="162">
+          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/222.png" />
+    <entry file="file://$PROJECT_DIR$/test/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo10/1111.JPG">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/pip/compat/dictconfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5940">
+          <caret line="227" column="8" lean-forward="false" selection-start-line="227" selection-start-column="8" selection-end-line="227" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-766396262/pygame/event.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4698">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-766396262/pygame/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="162" column="6" lean-forward="false" selection-start-line="162" selection-start-column="2" selection-end-line="162" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19386">
+          <caret line="724" column="25" lean-forward="false" selection-start-line="724" selection-start-column="25" selection-end-line="724" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo10/weight.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="56" column="18" lean-forward="false" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Funny/Eight Queens.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,4 +1,3 @@
-#coding=utf-8
 from xmlrpc.server import SimpleXMLRPCServer, Fault
 from xmlrpc.client import ServerProxy
 from os.path import join, abspath,isfile
