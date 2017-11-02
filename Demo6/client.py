@@ -48,7 +48,7 @@ class Client(Cmd):
             if f.faultCode != UNHANDLED: raise
             print ("Couldn't find the file", arg)
 
-    def do_exit(self,arg):
+    def do_exit(self, arg):
         print()
         sys.exit()
 
