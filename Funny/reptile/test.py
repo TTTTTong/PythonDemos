@@ -1,7 +1,2 @@
-import requests
-from bs4 import BeautifulSoup
-
-url = 'https://nba.hupu.com/'
-page = requests.get(url)
-soup = BeautifulSoup(page.text, 'lxml')
-print(soup.select('#J-t-game '))
+selects = ['#page_list > ul > li:nth-of-type({}) > a'.format(str(i)) for i in range(1, 4)]
+print(selects)
