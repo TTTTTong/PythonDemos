@@ -5,6 +5,11 @@ from bs4 import BeautifulSoup
 爬取小猪网首页上24个房源的信息
 """
 
+proxy = {
+    'http': '127.0.0.1:1080',
+    'https': '127.0.0.1:1080'
+}
+
 
 # 所有房源的页面
 def all_src():
