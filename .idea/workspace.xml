@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5583f1d8-1abe-4804-a362-ad63d3b74a8b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Funny/crawler/douban/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Funny/crawler/douban/movie_top.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Funny/crawler/test.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Funny/reptile/test.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Funny/reptile/__init__.py" afterPath="$PROJECT_DIR$/Funny/crawler/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Funny/reptile/simple.py" afterPath="$PROJECT_DIR$/Funny/crawler/simple.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Funny/reptile/xiaozhu.py" afterPath="$PROJECT_DIR$/Funny/crawler/xiaozhu.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Funny/reptile/xiaozhu_result.xls" afterPath="$PROJECT_DIR$/Funny/crawler/xiaozhu_result.xls" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,7 +55,7 @@
       <file leaf-file-name="simple.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Funny/crawler/simple.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
+            <state relative-caret-position="81">
               <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -75,7 +67,7 @@
       <file leaf-file-name="xiaozhu.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Funny/crawler/xiaozhu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
+            <state relative-caret-position="1701">
               <caret line="63" column="26" lean-forward="false" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -87,7 +79,7 @@
       <file leaf-file-name="movie_top.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Funny/crawler/douban/movie_top.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-286">
+            <state relative-caret-position="27">
               <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="11" />
               <folding />
             </state>
@@ -107,7 +99,7 @@
       <file leaf-file-name="api.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/requests/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
+            <state relative-caret-position="1620">
               <caret line="60" column="4" lean-forward="false" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
               <folding />
             </state>
@@ -117,7 +109,7 @@
       <file leaf-file-name="Worksheet.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/xlwt/Worksheet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
+            <state relative-caret-position="27756">
               <caret line="1034" column="8" lean-forward="false" selection-start-line="1034" selection-start-column="8" selection-end-line="1034" selection-end-column="8" />
               <folding />
             </state>
@@ -288,20 +280,7 @@
             <path>
               <item name="PyCharmWorkSpace" type="b2602c69:ProjectViewProjectNode" />
               <item name="PyCharmWorkSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="Funny" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PyCharmWorkSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PyCharmWorkSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="Funny" type="462c0819:PsiDirectoryNode" />
-              <item name="crawler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PyCharmWorkSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PyCharmWorkSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="Funny" type="462c0819:PsiDirectoryNode" />
-              <item name="crawler" type="462c0819:PsiDirectoryNode" />
-              <item name="douban" type="462c0819:PsiDirectoryNode" />
+              <item name="FlaskDemo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PyCharmWorkSpace" type="b2602c69:ProjectViewProjectNode" />
@@ -493,7 +472,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19591528" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19894099" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -823,7 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127251">
           <caret line="4713" column="8" lean-forward="false" selection-start-line="4713" selection-start-column="8" selection-end-line="4713" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,7 +841,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Funny/crawler/simple.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
+        <state relative-caret-position="81">
           <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -881,7 +859,7 @@
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/xlwt/Worksheet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
+        <state relative-caret-position="27756">
           <caret line="1034" column="8" lean-forward="false" selection-start-line="1034" selection-start-column="8" selection-end-line="1034" selection-end-column="8" />
           <folding />
         </state>
@@ -889,7 +867,7 @@
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/requests/api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
+        <state relative-caret-position="1620">
           <caret line="60" column="4" lean-forward="false" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
           <folding />
         </state>
@@ -897,7 +875,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Funny/crawler/xiaozhu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
+        <state relative-caret-position="1701">
           <caret line="63" column="26" lean-forward="false" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -915,7 +893,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Funny/crawler/douban/movie_top.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
+        <state relative-caret-position="27">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="11" />
           <folding />
         </state>
