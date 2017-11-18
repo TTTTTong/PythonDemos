@@ -3,7 +3,8 @@ from FlaskDemo import config
 import sys
 from FlaskDemo.models import User
 
-sys.path.append('D:\PyCharmWorkSpace')
+# sys.path.append('D:\PyCharmWorkSpace')
+sys.path.append('/Users/tongxiaoyu/Documents/Work/Code/PythonDemos')
 from FlaskDemo.exts import db
 
 app = Flask(__name__)
@@ -23,9 +24,9 @@ def login():
     else:
         phone = request.form.get('phone')
         password = request.form.get('password')
-        user = User.query.filter(User.phone == phone, User.password == password).first()
+        user = User.query.filter(User.phone == phone).first()
 
-        if user:
+        if user.verify_password(password):
             session['user_id'] = user.id
             session.permanent = True
             return redirect(url_for('index'))
@@ -64,6 +65,7 @@ def logout():
     # session.clear()
     return redirect(url_for('index'))
 
+
 @app.context_processor
 def my_context_processor():
     user_id = session.get('user_id', None)
@@ -73,6 +75,14 @@ def my_context_processor():
             return {'user': user}
     # context 钩子函数即使无结果也要返回空字典
     return {}
+
+
+@app.route('/question')
+def question():
+    if request.method == 'GET':
+        return render_template('question.html')
+    else:
+        pass
 
 
 if __name__ == '__main__':
