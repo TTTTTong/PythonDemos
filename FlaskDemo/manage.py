@@ -5,7 +5,7 @@ import sys
 sys.path.append('/Users/tongxiaoyu/Documents/Work/Code/PythonDemos')
 from FlaskDemo.flask_demo import app
 from FlaskDemo.exts import db
-from FlaskDemo.models import User
+from FlaskDemo.models import User, Question
 
 
 manager = Manager(app)

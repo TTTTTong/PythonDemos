@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from FlaskDemo import config
 import sys
-from FlaskDemo.models import User
+
+from FlaskDemo.decorators import login_required
+from FlaskDemo.models import User, Question
 
 # sys.path.append('D:\PyCharmWorkSpace')
 sys.path.append('/Users/tongxiaoyu/Documents/Work/Code/PythonDemos')
@@ -77,12 +79,23 @@ def my_context_processor():
     return {}
 
 
-@app.route('/question')
+@app.route('/question', methods=['GET', 'POST'])
+@login_required
 def question():
     if request.method == 'GET':
         return render_template('question.html')
     else:
-        pass
+        title = request.form.get('title')
+        content = request.form.get('content')
+        newquestion = Question(title=title, content=content)
+
+        user_id = session.get('user_id')
+        user = User.query.filter(User.id == user_id).first()
+        newquestion.author = user
+
+        db.session.add(newquestion)
+        db.session.commit()
+        return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
