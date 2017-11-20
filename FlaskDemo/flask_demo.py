@@ -1,9 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from FlaskDemo import config
 import sys
-
 from FlaskDemo.decorators import login_required
-from FlaskDemo.models import User, Question
+from FlaskDemo.models import User, Question, Comment
 
 # sys.path.append('D:\PyCharmWorkSpace')
 sys.path.append('/Users/tongxiaoyu/Documents/Work/Code/PythonDemos')
@@ -16,7 +15,10 @@ db.init_app(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    content = {
+        'questions': Question.query.order_by('-create_time').all()
+    }
+    return render_template('index.html', **content)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -96,6 +98,29 @@ def question():
         db.session.add(newquestion)
         db.session.commit()
         return redirect(url_for('index'))
+
+
+@app.route('/detail/<question_id>')
+def detail(question_id):
+    question_model = Question.query.filter(Question.id == question_id).first()
+    return render_template('detail.html', question=question_model)
+
+
+@app.route('/add_comment', methods=['POST'])
+@login_required
+def add_comment():
+    content = request.form.get('comment')
+    question_id = request.form.get('question_id')
+
+    author_id = session.get('user_id')
+    user = User.query.filter(User.id == author_id).first()
+    question_model = Question.query.filter(Question.id == question_id).first()
+
+    comment = Comment(content=content, author=user, question=question_model)
+
+    db.session.add(comment)
+    db.session.commit()
+    return redirect(url_for('detail', question_id=question_id))
 
 
 if __name__ == '__main__':
