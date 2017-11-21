@@ -41,6 +41,7 @@ class Comment(db.Model):
     content = db.Column(db.Text, nullable=False)
     question_id = db.Column(db.Integer, db.ForeignKey('question.id'))
     author_id = db.Column(db.Integer, db.ForeignKey('flask_user.id'))
+    create_time = db.Column(db.DateTime, default=datetime.now)
 
-    question = db.relationship('Question', backref=db.backref('comments'))
+    question = db.relationship('Question', backref=db.backref('comments', order_by=create_time.desc()))
     author = db.relationship('User', backref=db.backref('comments'))

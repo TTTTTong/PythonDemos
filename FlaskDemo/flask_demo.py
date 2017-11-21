@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, g
+from sqlalchemy import or_
+
 from FlaskDemo import config
 import sys
 from FlaskDemo.decorators import login_required
@@ -21,6 +23,23 @@ def index():
     return render_template('index.html', **content)
 
 
+@app.before_request
+def before_qequest():
+    user_id = session.get('user_id')
+    if user_id:
+        user = User.query.filter(User.id == user_id).first()
+        if user:
+            g.user = user
+
+
+@app.context_processor
+def my_context_processor():
+    if hasattr(g, 'user'):
+            return {'user': g.user}
+    # context 钩子函数即使无结果也要返回空字典
+    return {}
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
@@ -30,7 +49,7 @@ def login():
         password = request.form.get('password')
         user = User.query.filter(User.phone == phone).first()
 
-        if user.verify_password(password):
+        if user and user.verify_password(password):
             session['user_id'] = user.id
             session.permanent = True
             return redirect(url_for('index'))
@@ -70,17 +89,6 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.context_processor
-def my_context_processor():
-    user_id = session.get('user_id', None)
-    if user_id:
-        user = User.query.filter(User.id == user_id).first()
-        if user:
-            return {'user': user}
-    # context 钩子函数即使无结果也要返回空字典
-    return {}
-
-
 @app.route('/question', methods=['GET', 'POST'])
 @login_required
 def question():
@@ -91,9 +99,9 @@ def question():
         content = request.form.get('content')
         newquestion = Question(title=title, content=content)
 
-        user_id = session.get('user_id')
-        user = User.query.filter(User.id == user_id).first()
-        newquestion.author = user
+        # user_id = session.get('user_id')
+        # user = User.query.filter(User.id == user_id).first()
+        newquestion.author = g.user
 
         db.session.add(newquestion)
         db.session.commit()
@@ -112,15 +120,27 @@ def add_comment():
     content = request.form.get('comment')
     question_id = request.form.get('question_id')
 
-    author_id = session.get('user_id')
-    user = User.query.filter(User.id == author_id).first()
+    # author_id = session.get('user_id')
+    # user = User.query.filter(User.id == author_id).first()
     question_model = Question.query.filter(Question.id == question_id).first()
 
-    comment = Comment(content=content, author=user, question=question_model)
+    comment = Comment(content=content, author=g.user, question=question_model)
 
     db.session.add(comment)
     db.session.commit()
     return redirect(url_for('detail', question_id=question_id))
+
+
+@app.route('/search')
+def search():
+    q = request.args.get('q')
+    # 或
+    questions = Question.query.filter(or_(Question.title.contains(q),
+                                          Question.content.contains(q))).order_by('-create_time')
+    # 与
+    # questions = Question.query.filter(Question.title.contains(q),
+    #                                       Question.content.contains(q)).order_by('-create_time')
+    return render_template('index.html', questions=questions)
 
 
 if __name__ == '__main__':

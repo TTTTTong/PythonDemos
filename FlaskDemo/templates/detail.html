@@ -26,10 +26,17 @@
             <button class="btn btn-primary ">发表</button>
         </div>
     </form>
-    <ul>
-    <li>222</li>
-    {% for comment in question.comment %}
-            <li>{{comment.content}}</li>
+    <ul class="comment-list">
+        {% for comment in question.comments %}
+            <!--<li>{{comment.content}}</li>-->
+        <li>
+            <div class="user-info">
+                <img class="avatar" src="{{url_for('static', filename='img/logo.jpg')}}">
+                <span class="username">{{comment.author.user}}</span>
+                <span class="create-time">{{comment.create_time}}</span>
+            </div>
+            <p class="comment-content">{{comment.content}}</p>
+        </li>
         {% endfor %}
     </ul>
 {% endblock %}
