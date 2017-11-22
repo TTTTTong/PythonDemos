@@ -31,7 +31,7 @@ class Client(Cmd):
         Cmd.__init__(self)
         self.secret = randomString(SECRET_LENGTH)
         n = Node(url, dirname, self.secret)
-        t = Thread(target = n._start)
+        t = Thread(target=n._start)
         t.setDaemon(1)
         t.start()
 

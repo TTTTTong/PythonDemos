@@ -5,7 +5,9 @@ import socket, asyncore
 PORT = 5005
 NAME = 'TestChat'
 
+
 class EndSession(Exception): pass
+
 
 class CommandHandler:
     """
@@ -33,6 +35,7 @@ class CommandHandler:
             # If it isn't, respond to the unknown command:
             self.unknown(session, cmd)
 
+
 class Room(CommandHandler):
     """
     A generic environment that may contain one or more users (sessions).
@@ -59,6 +62,7 @@ class Room(CommandHandler):
     def do_logout(self, session, line):
         'Respond to the logout command'
         raise EndSession
+
 
 class LoginRoom(Room):
     """
@@ -89,6 +93,7 @@ class LoginRoom(Room):
             # the user is moved into the main room.
             session.name = name
             session.enter(self.server.main_room)
+
 
 class ChatRoom(Room):
     """
@@ -121,6 +126,7 @@ class ChatRoom(Room):
         for name in self.server.users:
             session.push((name + '\r\n').encode('utf-8'))
 
+
 class LogoutRoom(Room):
     """
     A simple room for a single user. Its sole purpose is to remove the
@@ -131,7 +137,8 @@ class LogoutRoom(Room):
         # When a session (user) enters the LogoutRoom it is deleted
         try: del self.server.users[session.name]
         except KeyError: pass
-        
+
+
 class ChatSession(async_chat):
     """
     A single session, which takes care of the communication with a single user.
@@ -168,6 +175,7 @@ class ChatSession(async_chat):
         async_chat.handle_close(self)
         self.enter(LogoutRoom(self.server))
 
+
 class ChatServer(dispatcher):
     """
     A chat server with a single room.
@@ -186,6 +194,7 @@ class ChatServer(dispatcher):
     def handle_accept(self):
         conn, addr = self.accept()
         ChatSession(self, conn)
+
 
 if __name__ == '__main__':
     s = ChatServer(PORT, NAME)

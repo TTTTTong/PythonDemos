@@ -1,8 +1,15 @@
 .form-container{
+    padding-top: 15px;
     width: 300px;
     margin: 0 auto;
 }
 
 .page-title{
     text-align: center;
+}
+
+.flash{
+    width: 500px;
+    text-align: center;
+    margin: 0 auto;
 }

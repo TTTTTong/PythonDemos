@@ -1,18 +1,19 @@
-from flask import Flask, render_template, request, redirect, url_for, session, g
+from flask import Flask, render_template, request, redirect, url_for, session, g, flash
 from sqlalchemy import or_
-
 from FlaskDemo import config
 import sys
 from FlaskDemo.decorators import login_required
 from FlaskDemo.models import User, Question, Comment
-
+from flask_mail import Mail, Message
 # sys.path.append('D:\PyCharmWorkSpace')
+from FlaskDemo.send_mails import send_email
 sys.path.append('/Users/tongxiaoyu/Documents/Work/Code/PythonDemos')
 from FlaskDemo.exts import db
 
 app = Flask(__name__)
 app.config.from_object(config)
 db.init_app(app)
+mail = Mail(app)
 
 
 @app.route('/')
@@ -50,11 +51,14 @@ def login():
         user = User.query.filter(User.phone == phone).first()
 
         if user and user.verify_password(password):
+            send_email(app)
+
             session['user_id'] = user.id
             session.permanent = True
             return redirect(url_for('index'))
         else:
-            return u'wrong!'
+            flash('The username or password is wrong')
+            return redirect(url_for('login'))
 
 
 @app.route('/registe', methods=['GET', 'POST'])
