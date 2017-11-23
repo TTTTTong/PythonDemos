@@ -1,7 +1,6 @@
 import pymysql
 from flask import Flask
 from flask_login import LoginManager
-from flask_mail import Mail
 from FlaskDemo import config
 from FlaskDemo.exts import db
 

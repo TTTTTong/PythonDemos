@@ -11,6 +11,12 @@
 {% block main %}
      <form action="" method="post">
         <h3 class="page-title">注册</h3>
+         {% for message in get_flashed_messages() %}
+         <div class="alert alert-warning flash">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{message}}
+         </div>
+        {% endfor %}
         <div class="form-container">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="phone" name="phone">

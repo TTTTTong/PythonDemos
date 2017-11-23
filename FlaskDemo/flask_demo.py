@@ -56,6 +56,7 @@ def login():
 
         if user and user.verify_password(password):
             # send_email(app)
+
             login_user(user)
             return redirect(url_for('index'))
         else:
@@ -77,6 +78,7 @@ def registe():
             return u'has registed, try another!'
         else:
             if password1 != password2:
+                flash('The username or password is wrong')
                 return u'not samed password'
             else:
                 user = User(phone=phone, user=name, password=password1)
