@@ -1,3 +1,8 @@
-import sys
+from datetime import datetime
+from time import time, sleep
 
-print(sys.path)
+print(datetime.now())
+
+print(time())
+sleep(1)
+print(time())

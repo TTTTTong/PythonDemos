@@ -1,19 +1,13 @@
-from flask import Flask, render_template, request, redirect, url_for, session, g, flash
+from flask import render_template, request, redirect, url_for, session, g, flash
+from flask_login import login_required, login_user, logout_user
 from sqlalchemy import or_
-from FlaskDemo import config
 import sys
-from FlaskDemo.decorators import login_required
+from FlaskDemo import create_app, login_manager
 from FlaskDemo.models import User, Question, Comment
-from flask_mail import Mail, Message
-# sys.path.append('D:\PyCharmWorkSpace')
-from FlaskDemo.send_mails import send_email
 sys.path.append('/Users/tongxiaoyu/Documents/Work/Code/PythonDemos')
 from FlaskDemo.exts import db
 
-app = Flask(__name__)
-app.config.from_object(config)
-db.init_app(app)
-mail = Mail(app)
+app = create_app()
 
 
 @app.route('/')
@@ -41,6 +35,16 @@ def my_context_processor():
     return {}
 
 
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+
+'''
+视图函数
+'''
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
@@ -51,10 +55,8 @@ def login():
         user = User.query.filter(User.phone == phone).first()
 
         if user and user.verify_password(password):
-            send_email(app)
-
-            session['user_id'] = user.id
-            session.permanent = True
+            # send_email(app)
+            login_user(user)
             return redirect(url_for('index'))
         else:
             flash('The username or password is wrong')
@@ -86,10 +88,11 @@ def registe():
 
 @app.route('/logout')
 def logout():
-    session.pop('user_id')
+    # session.pop('user_id')
     # del session['user_id']
     # 删除所有
     # session.clear()
+    logout_user()
     return redirect(url_for('index'))
 
 
