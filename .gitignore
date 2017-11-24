@@ -1,3 +1,2 @@
-*.pyc
 FlaskDemo/config.py
-FlaskDemo/bug.txt
+*.pyc
