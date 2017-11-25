@@ -2,12 +2,12 @@ from flask import render_template, request, redirect, url_for, session, g, flash
 from flask_login import login_required, login_user, logout_user
 from sqlalchemy import or_
 import sys
-from FlaskDemo import create_app, login_manager
+from FlaskDemo import app, login_manager
 from FlaskDemo.models import User, Question, Comment
+from FlaskDemo.send_mails import send_email
+
 sys.path.append('/Users/tongxiaoyu/Documents/Work/Code/PythonDemos')
 from FlaskDemo.exts import db
-
-app = create_app()
 
 
 @app.route('/')
@@ -55,8 +55,6 @@ def login():
         user = User.query.filter(User.phone == phone).first()
 
         if user and user.verify_password(password):
-            # send_email(app)
-
             login_user(user)
             return redirect(url_for('index'))
         else:
@@ -84,6 +82,9 @@ def registe():
                 user = User(phone=phone, user=name, password=password1)
                 db.session.add(user)
                 db.session.commit()
+                token = user.generate_confirmation_token()
+                send_email()
+                flash('a confirmation email has been sent to you')
 
                 return redirect(url_for('login'))
 

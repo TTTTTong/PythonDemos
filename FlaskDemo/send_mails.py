@@ -2,8 +2,8 @@ from threading import Thread
 from flask_mail import Message, Mail
 
 
-def send_email(app):
-    msg = Message(app.config['FLASKY_MAIL_SUBJECT_PREFIX']+'NewUser', sender=app.config['MAIL_USERNAME'],
+def send_email(app, **kwargs):
+    msg = Message(app.config['FLASKY_MAIL_SUBJECT_PREFIX']+' NewUser', sender=app.config['MAIL_USERNAME'],
                   recipients=[app.config['MAIL_SEND_TO']])
     # msg.body = render_template(template+'.txt', **kwargs)
     # msg.html = render_template(template+'.html', **kwargs)
