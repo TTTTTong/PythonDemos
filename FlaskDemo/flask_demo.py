@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, url_for, session, g, flash
-from flask_login import login_required, login_user, logout_user
+from flask_login import login_required, login_user, logout_user, current_user
 from sqlalchemy import or_
 import sys
 from FlaskDemo import app, login_manager
@@ -55,8 +55,12 @@ def login():
         user = User.query.filter(User.phone == phone).first()
 
         if user and user.verify_password(password):
-            login_user(user)
-            return redirect(url_for('index'))
+            if user.confirmed:
+                login_user(user)
+                return redirect(url_for('index'))
+            else:
+                flash('your account is not confirmed!')
+                return redirect(url_for('login'))
         else:
             flash('The username or password is wrong')
             return redirect(url_for('login'))
@@ -83,10 +87,22 @@ def registe():
                 db.session.add(user)
                 db.session.commit()
                 token = user.generate_confirmation_token()
-                send_email()
+                send_email(app, user, token)
                 flash('a confirmation email has been sent to you')
 
                 return redirect(url_for('login'))
+
+
+@app.route('/confirm/<token>')
+@login_required
+def confirm(token):
+    if current_user.confirmed:
+        return redirect(url_for('index'))
+    if current_user.confirm(token):
+        flash('you have confirm your account!')
+    else:
+        flash('the confirmatio is invalid')
+    return redirect(url_for('index'))
 
 
 @app.route('/logout')
