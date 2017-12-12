@@ -1,5 +1,6 @@
 from django.shortcuts import render, render_to_response, get_object_or_404
 from .models import Post, Category
+from comments.forms import CommentForm
 import markdown
 import pygments
 
@@ -20,6 +21,8 @@ def detail(request, pk):
         'markdown.extensions.codehilite',
         'markdown.extensions.toc'
     ])
+    form = CommentForm()
+    comment_list = post.comment_set.all()
     return render_to_response('blog/detail.html', locals())
 
 
