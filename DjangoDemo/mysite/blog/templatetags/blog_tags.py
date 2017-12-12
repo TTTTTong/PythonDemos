@@ -11,7 +11,7 @@ def get_recent_posts(num=5):
 
 @register.simple_tag
 def archives():
-    # 按时间归档，精确到月s
+    # 按时间归档，精确到月
     return Post.objects.dates('create_time', 'month', order='DESC')
 
 

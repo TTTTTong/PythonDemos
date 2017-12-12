@@ -90,30 +90,31 @@
                 </div>
                 <div class="widget widget-archives">
                     <h3 class="widget-title">归档</h3>
-                    {% get_categories as categories_list %}
+                    {% archives as date_list %}
                     <ul>
-                    {% for category in categories_list %}
-                       <li>
-                           <a href="#">{{ category.name }} <span class="post-count">(13)</span> </a>
-                       </li>
-                    {% empty %}
-                    暂无分类！
-                    {% endfor %}
+                        {% for date in date_list %}
+                        <li>
+                            <a href="{% url 'blog:archives' date.year date.month %}">
+                                {{ date.year }}年 {{ date.month }}月
+                            </a>
+                        </li>
+                        {% empty %}
+                        暂时没有归档
+                        {% endfor %}
                     </ul>
                 </div>
 
                 <div class="widget widget-category">
                     <h3 class="widget-title">分类</h3>
+                    {% get_categories as categories_list %}
                     <ul>
-                        <li>
-                            <a href="#">Django 博客教程 <span class="post-count">(13)</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Python 教程 <span class="post-count">(11)</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Django 用户认证 <span class="post-count">(8)</span></a>
-                        </li>
+                    {% for category in categories_list %}
+                       <li>
+                           <a href="{% url 'blog:categories' category.pk %}">{{ category.name }} <span class="post-count">(13)</span> </a>
+                       </li>
+                    {% empty %}
+                    暂无分类！
+                    {% endfor %}
                     </ul>
                 </div>
 
