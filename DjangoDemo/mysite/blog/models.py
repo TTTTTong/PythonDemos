@@ -1,3 +1,4 @@
+import datetime
 import markdown
 from django.contrib.auth.models import User
 from django.db import models
@@ -24,8 +25,8 @@ class Tag(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=70)
     body = models.TextField()
-    create_time = models.DateTimeField()
-    modified_time = models.DateTimeField()
+    create_time = models.DateTimeField(default=datetime.datetime.now)  # now()获取的是服务器第一次运行的时间
+    modified_time = models.DateTimeField(default=datetime.datetime.now)
     excerpt = models.CharField(max_length=200, blank=True)  # 摘要
     category = models.ForeignKey(Category)
     tags = models.ManyToManyField(Tag, blank=True)
@@ -44,10 +45,7 @@ class Post(models.Model):
 
     # 自动生成摘要
     def save(self, *args, **kwargs):
-        # if not self.excerpt:
-        #     self.excerpt = self.body[:50]
-        #     print(self.body[:50])
-        # super(Post, self).save(*args, **kwargs)
+        self.modified_time = datetime.datetime.now()
 
         if not self.excerpt:
             # 首先实例化一个 Markdown 类，用于渲染 body 的文本
@@ -61,7 +59,7 @@ class Post(models.Model):
             self.excerpt = strip_tags(md.convert(self.body))[:54]
 
             # 调用父类的 save 方法将数据保存到数据库中
-        super(Post, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
     class Meta:
         ordering = ['-create_time']

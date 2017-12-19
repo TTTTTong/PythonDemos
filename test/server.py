@@ -1,3 +1,6 @@
+import datetime
 import os
 
-print(os.path.dirname(__file__))
+import django
+
+print(django.ustils.timezone.now())
