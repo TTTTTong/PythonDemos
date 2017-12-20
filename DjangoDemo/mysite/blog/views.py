@@ -1,7 +1,10 @@
 from django.shortcuts import render, render_to_response, get_object_or_404
 from django.views.generic import ListView, DetailView
-from .models import Post, Category
+from markdown.extensions.toc import TocExtension
+
+from .models import Post, Category, Tag
 from comments.forms import CommentForm
+from django.utils.text import slugify
 from django.core.paginator import Paginator
 import markdown
 import pygments
@@ -49,7 +52,7 @@ class IndexView(ListView):
     template_name = 'blog/index.html'
     context_object_name = 'post_list'
 
-    # 类视图中已经写好了分页逻辑，指定了paginate属性后会开启分页功能
+    # 类视图中已经写好了分页逻辑，指定了paginate_by属性后会开启分页功能
     paginate_by = 3
 
     def get_context_data(self, **kwargs):
@@ -78,7 +81,7 @@ class IndexView(ListView):
 
     def pagination_data(self, paginator, page_obj, is_paginated):
         """
-        先来分析一下导航条的组成部分，可以看到整个分页导航条其实可以分成 七个部分：
+        整个分页导航条其实可以分成 七个部分：
         1.第 1 页页码，这一页需要始终显示。
         2.第 1 页页码后面的省略号部分。但要注意如果第 1 页的页码号后面紧跟着页码号 2，那么省略号就不应该显示。
         3.当前页码的左边部分，比如这里的 3-6。
@@ -159,8 +162,13 @@ class ArchivesView(IndexView):
     def get_queryset(self):
         year = self.kwargs.get('year')
         month = self.kwargs.get('month')
-        return super().get_queryset().filter(create_time__year=year,
-                                                               create_time__month=month)
+        return super().get_queryset().filter(create_time__year=year, create_time__month=month)
+
+
+class TagView(IndexView):
+    def get_queryset(self):
+        tag = get_object_or_404(Tag, pk=self.kwargs.get('pk'))
+        return super().get_queryset().filter(tags=tag)
 
 
 class PostDetailView(DetailView):
@@ -178,13 +186,17 @@ class PostDetailView(DetailView):
         return response
 
     def get_object(self, queryset=None):
-        # 重写此方法是为了对post的body值进行渲染
+        # 重写此方法是为了对post的body值进行渲染,因为在Post模型中存储的是Markdown格式的文本
+        # 需要转化为HTML格式传递给模板
         post = super().get_object(queryset=None)
-        post.body = markdown.markdown(post.body, extensions=[
-                                        'markdown.extensions.extra',
-                                        'markdown.extensions.codehilite',
-                                        'markdown.extensions.toc',
-                                        ])
+        md = markdown.Markdown(extensions=[
+                                'markdown.extensions.extra',
+                                'markdown.extensions.codehilite',
+                                # 'markdown.extensions.toc',  # 自动生成目录的拓展
+                                TocExtension(slugify=slugify),  # 与Markdown内置toc拓展不同的是可以处理中文标题
+                                ])
+        post.body = md.convert(post.body)
+        post.toc = md.toc  # 动态给post添加toc属性，Python作为动态语言的特性
 
         return post
 
