@@ -3,6 +3,9 @@
 
 {% block main %}
     <link rel="stylesheet" href="{% static 'blog/css/index.css' %}">
+    {% if error_msg %}
+        {{ error_msg }}
+    {% endif %}
 
     {% for post in post_list %}
     <article class="post post-{{ post.pk }}">
