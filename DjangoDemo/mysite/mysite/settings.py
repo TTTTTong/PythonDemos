@@ -134,15 +134,25 @@ STATIC_URL = '/static/'
 
 
 # HAYSTACK配置
+# HAYSTACK_CONNECTIONS = {
+#     'default': {
+#         # 指定搜索引擎
+#         'ENGINE': 'blog.whoosh_cn_backend.WhooshEngine',
+#         # 指定索引文件存放位置
+#         'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+#     },
+# }
+# # 对搜索结果分页
+# HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
+# # 指定什么时候更新索引，这里设置每当有文章更新时就更新索引
+# HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+
 HAYSTACK_CONNECTIONS = {
     'default': {
-        # 指定搜索引擎
         'ENGINE': 'blog.whoosh_cn_backend.WhooshEngine',
-        # 指定索引文件存放位置
         'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
     },
 }
-# 对搜索结果分页
 HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
-# 指定什么时候更新索引，这里设置每当有文章更新时就更新索引
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
