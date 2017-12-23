@@ -17,13 +17,16 @@ from django.contrib import admin
 from django.conf.urls import url, include
 from DjangoDemo.mysite.mysite import views
 
+
 urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'', include('blog.urls')),
     url(r'', include('comments.urls')),
+    url(r'', include('myauth.urls')),
+    url(r'', include('django.contrib.auth.urls')),
     url(r'^search/', include('haystack.urls')),
 
-    url('^hello/$', views.date),
-    url('^search/$', views.search),
+    # url('^hello/$', views.date),
+    # url('^search/$', views.search),
 
 ]
