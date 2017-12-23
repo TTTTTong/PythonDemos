@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # 'books',
     'blog',
     'comments',
+    'myauth',
 ]
 
 MIDDLEWARE = [
@@ -156,3 +157,7 @@ HAYSTACK_CONNECTIONS = {
 }
 HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+
+# 指定自定义用户模型的位置
+AUTH_USER_MODEL = 'myauth.User'
