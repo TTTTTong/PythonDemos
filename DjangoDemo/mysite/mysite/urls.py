@@ -22,11 +22,12 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'', include('blog.urls')),
     url(r'', include('comments.urls')),
-    url(r'', include('myauth.urls')),
     url(r'', include('django.contrib.auth.urls')),
+    url(r'', include('myauth.urls')),
     url(r'^search/', include('haystack.urls')),
 
     # url('^hello/$', views.date),
     # url('^search/$', views.search),
 
 ]
+
