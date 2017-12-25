@@ -151,3 +151,7 @@ HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 # 指定自定义用户模型的位置
 AUTH_USER_MODEL = 'myauth.User'
+
+# 如果在地址栏输入URL进行登录或者注销，则无法获取next值，在这里设置跳转到首页
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'

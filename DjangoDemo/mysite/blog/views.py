@@ -5,6 +5,7 @@ from django.db.models import Q
 from .models import Post, Category, Tag
 from comments.forms import CommentForm
 from django.utils.text import slugify
+from myauth.models import User
 from django.core.paginator import Paginator
 import markdown
 import pygments
@@ -203,7 +204,11 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         # 重写此方法是为了把评论表单、评论列表传递给模板
         context = super().get_context_data(**kwargs)
-        form = CommentForm()
+
+        session_id = self.request.session.get('_auth_user_id', None)
+        session_user = User.objects.get(id=session_id) if session_id else None
+
+        form = CommentForm(initial={'name': session_user})
         comment_list = self.object.comment_set.all()
 
         context.update({

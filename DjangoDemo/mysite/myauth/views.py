@@ -19,10 +19,6 @@ from .forms import RegisterForm
 #     return render(request, 'myauth/register.html', context={'form': form})
 
 
-def index(request):
-    return render(request, 'blog/index.html')
-
-
 @csrf_exempt
 def register(request):
     # 只有当请求为 POST 时，才表示用户提交了注册信息
@@ -38,7 +34,7 @@ def register(request):
             form.save()
 
             # 注册成功，跳转回首页
-            return redirect('/')
+            return redirect('login')
     else:
         # 请求不是 POST，表明用户正在访问注册页面，展示一个空的注册表单给用户
         form = RegisterForm()
