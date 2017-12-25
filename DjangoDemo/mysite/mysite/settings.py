@@ -149,9 +149,20 @@ HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 
+# ------------------------------------------认证相关-----------------------------
 # 指定自定义用户模型的位置
 AUTH_USER_MODEL = 'myauth.User'
 
 # 如果在地址栏输入URL进行登录或者注销，则无法获取next值，在这里设置跳转到首页
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
+
+# 模拟发送邮件到终端
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# 设置使用哪些backends对用户凭据进行验证
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',  # Django内置的backend
+    'myauth.backends.EmailBackend',
+)
+# -----------------------------------------------------------------------------
