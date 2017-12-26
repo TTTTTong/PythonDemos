@@ -1,0 +1,8 @@
+1.CSRF，目前是用装饰器取消了CSRF功能(3个app)；
+2.分页CSS设置；
+3.为什么datetime.now()是服务器第一次运行时间；
+4.归档标签统计数量，像category那样；
+5.用django mptt 和 django contrib comments 实现两层评论；
+6.chrome中文toc乱码;
+8.cookies时间；
+9.mail设置；(flask)
