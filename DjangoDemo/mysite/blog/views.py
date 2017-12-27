@@ -8,6 +8,7 @@ from django.utils.text import slugify
 from myauth.models import User
 from django.core.paginator import Paginator
 import markdown
+import logging
 import pygments
 
 
@@ -176,6 +177,9 @@ class PostDetailView(DetailView):
     model = Post
     template_name = 'blog/detail.html'
     context_object_name = 'post'  # 此处小写
+
+    logger = logging.getLogger('django')
+    logger.info('====postDetail======')
 
     def get(self, request, *args, **kwargs):
         # 重写get方法是为了在此处将post的阅读量+1

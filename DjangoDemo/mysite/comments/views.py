@@ -3,6 +3,7 @@ from django.template import RequestContext
 from blog.models import Post
 from django.views.decorators.csrf import csrf_exempt
 from .forms import CommentForm
+import  logging
 
 
 # Create your views here.
@@ -21,6 +22,9 @@ def post_comment(request, post_pk):
             # 将post实例与comment关联后再保存
             comment.post = post
             comment.save()
+
+            logger = logging.getLogger('django')
+            logger.info('====comment====')
 
             # redirect接收到模型实例后会调用模型的get_absolute_url方法，然后重定向到此方法返回的URL
             return redirect(post)

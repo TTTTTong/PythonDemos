@@ -158,7 +158,9 @@ LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 
 # 模拟发送邮件到终端
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+from .setting_email import *
+
 
 # 设置使用哪些backends对用户凭据进行验证
 AUTHENTICATION_BACKENDS = (
@@ -166,3 +168,6 @@ AUTHENTICATION_BACKENDS = (
     'myauth.backends.EmailBackend',
 )
 # -----------------------------------------------------------------------------
+
+from .setting_log import Mylog
+LOGGING = Mylog
