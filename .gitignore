@@ -1,3 +1,4 @@
 FlaskDemo/config.py
 DjangoDemo/mysite/mysite/setting_email.py
+*.log
 *.pyc
