@@ -13,14 +13,16 @@ try:
     request = urllib.request.Request(url, headers=headers)
     response = urllib.request.urlopen(request)
     content = response.read().decode('utf-8')
-    pattern = re.compile('<div.*?author">.*?<a.*?<img.*?>(.*?)</a>.*?<div.*?' +
-                         'content">(.*?)<!--(.*?)-->.*?</div>(.*?)<div class="stats.*?class="number">(.*?)</i>', re.S)
+    # pattern = re.compile('<div.*?author">.*?<a.*?<img.*?>(.*?)</a>.*?<div.*?' +
+    #                      'content">(.*?)<!--(.*?)-->.*?</div>(.*?)<div class="stats.*?class="number">(.*?)</i>', re.S)
+    pattern = re.compile('h2>(.*?)</h2.*?content">.*?<span>(.*?)</span.*?number">(.*?)</.*?number">(.*?)</', re.S)
+
     items = re.findall(pattern, content)
 
     for item in items:
-        haveImg = re.search('img', item[3])
-        if not haveImg:
-            print(item[0], item[1], item[2], item[4])
+        # haveImg = re.search('img', item[3])
+        # if not haveImg:
+        print('作者：', item[0].strip(), item[1].strip(), item[2].strip(), '点赞', item[3].strip(), '评论')
 
 
 except urllib.error.HTTPError as e:
