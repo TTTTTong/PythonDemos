@@ -50,7 +50,7 @@ class QSBK:
 
     def loadPage(self):
         # 如果当前为阅读的页数小于一页，则加载新的一页
-        if self.enable == True:
+        if self.enable is True:
             if len(self.story) < 2:
                 pageStore = self.getPageItem(self.pageIndex)
                 if pageStore:
