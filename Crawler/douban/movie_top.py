@@ -15,7 +15,7 @@ def get_rst(url):
     page = requests.get(url, headers=header)
     soup = BeautifulSoup(page.text, 'lxml')
     for i in soup.select('div.hd'):
-        desc = i.select('span.inq') # js加载，暂时未获取
+        desc = i.select('span.inq')  # js加载，暂时未获取
         movie_name = i.select('span.title')[0].text
         if len(i.select('span.title')) == 2:
             movie_name += i.select('span.title')[1].text

@@ -9,19 +9,19 @@ import webbrowser
 
 class Taobao:
     def __init__(self):
-        self.loginURL = 'https://login.taobao.com/member/login.jhtml'
+        self.loginURL = 'https://login.taobao.com/member/request_nick_check.do'
         # self.proxyURL =
         self.loginHeaders = {
-            'Accept': 'text/html,application/xhtml+xm…plication/xml;q=0.9,*/*;q=0.8',
+            'Accept': 'application/json, text/javascript, */*; q=0.01',
             'Accept-Encoding': 'gzip, deflate, br',
             'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
             'Connection': 'keep-alive',
             'Content-Length': '3046',
             'Content-Type': 'application/x-www-form-urlencoded',
             'Host': 'login.taobao.com',
-            'Referer': 'https://login.taobao.com/membe…tps%3A%2F%2Fwww.taobao.com%2F',
+            'Referer': 'https://login.taobao.com/member/login.jhtml?redirectURL=https%3A%2F%2Fwww.taobao.com%2F',
             'Upgrade-Insecure-Requests': '1',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel …) Gecko/20100101 Firefox/57.0'
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:57.0) Gecko/20100101 Firefox/57.0'
         }
         self.username = '15529208705'
         self.ua = '106#+YoBgQBLBuDBGQKaBBBBBpZb54rZS0Gi94iYL0pc74/uSCZY5udZt0py7VrYD0Yb549uy0ds5V/Vpb5i5fsZTiGY7Vbf0JkKBBgbylZwsMtlw6SKBB8byltdmW2/BCBEylmi4gO0ylmbyl333p0bkImbyzzz0qphylmRggO0S6lbyl333pWbEzLKBlYh6Dm51E2XtQDc7hcUPZpzAm9s2qAepuO93Uy/SdbeqOZYkNcUPZpzAm9a63a4AjDo9fCxH2L09fGYm4uhQQ+UKfKUd8uSDhpmtC5Tr+ToBQphGhHajYTHpuOM2cAtDhpmtC9EFxzAdDYg7URYTO1YWXbOncUdAet0vjiIyJ97vZGO7URYTOTSBjba63a4AjDpdfi1cyi4+ZLutPXINpOICudzv8avZV+97hJua5y0tZtQtXqPag/5lYLNqvapKjB57mZ1FxQm5TBj+feuOZGbBTtfm6lnBP9AdW0UaJQuoLZYtQ8HjDGYkotuGHmopuQD…KTRylDv34r6KCCmaNJ5+SRGUzUZCCLTfkRkNCoBAVlb1Zzz5ZSpKB3a7TLNRkung+pKXf02RkU5BCB5tcmi4gOLgBDoBFxMWf7kRtMkLDo++DgkR+LKBKTRylDv3AeaKCCmaNJ5+SRGUzUZCCLTfkRkNCoBAVlb1Zzz5bLpKB3a7TLNRkung+pKXf02RkU5BCB5tcmi4gOP9BDoBFxMWf7kRtMkLDo++DgkR+LKBKTRylDv3A9XKCCmaNJ5+SRGUzUZCCLTfkRkrboBKlBb1ZziBCBVtcpG4J/0ymhlQaxGeednfQuoQV1klkQiBCBVtcpo4JK0ymu8QaxGeednfQuoQV1klkQiBCBVtcpq4zY0ymhPQaxGeednfQuoQV1klkQiBCBVtcpd4zK0ymhIQaxGeednfQuoQV1klkQiBCBVtcpf4zp0y4iuQaxGeednfQuoQV1klkQJBCB8tcpf4zp0ylmbq0DvtQroe9OnPAxr2DQGfSQ1BCBoBBKM7Q=='
@@ -71,7 +71,7 @@ class Taobao:
             'naviVer': 'firefox|35'
         }
         # 将post的数据进行编码转换
-        self.postdata = urlencode(self.post).encode(encoding='utf8')
+        self.postdata = urlencode(self.post).encode('utf-8')
         # 设置cookie
         self.cookie = http.cookiejar.LWPCookieJar()
         # 设置cookie处理器
@@ -81,16 +81,16 @@ class Taobao:
 
     # 判断是否需要验证码
     def ifNeedIdenCode(self):
-        request = urllib.request.Request(self.loginURL, self.postdata, self.loginHeaders)
+        request = urllib.request.Request(url=self.loginURL, data=self.postdata, headers=self.loginHeaders)
         response = self.opener.open(request)
-        content = response.read().decode('gbk')
+        content = response.read().decode('utf-8')
         # 获取响应码
         status = response.getcode()
 
         if status == 200:
             print(u'获取请求成功！')
             # \u8bf7\u8f93\u5165\u9a8c\u8bc1\u7801 这六个字是请输入验证码的utf-8编码
-            pattern = re.compile(u'\u8bf7\u8f93\u5165\u9a8c\u8bc1\u7801', re.S)
+            pattern = re.compile('\u8bf7\u8f93\u5165\u9a8c\u8bc1\u7801', re.S)
             result = re.search(pattern, content)
 
             if result:
