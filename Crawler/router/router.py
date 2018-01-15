@@ -1,22 +1,18 @@
 import http.cookiejar
+import requests
 import json
-from urllib.parse import urlencode
-import urllib.request
 
 
 class Router:
     def __init__(self):
         self.loginURL = 'http://192.168.1.1/'
-        self.cookie = http.cookiejar.LWPCookieJar()
+        self.cookie = http.cookiejar.CookieJar()
         self.header = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:57.0) Gecko/20100101 Firefox/57.0',
             'Content-Type': 'application/json; charset=UTF-8',
         }
-        self.postdata = urlencode({
-            'method': 'do',
-            'login': {'password': self.encrypt_pwd('7573066')}
-        }).encode()
-        self.opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.cookie))
+        # 这样直接写麻烦的话可以先写成字典再用json.dumps()转换
+        self.postdata = '{"method": "do", "login": {"password": "%s"}}' % self.encrypt_pwd('7573066')
 
     def encrypt_pwd(self, password):
         input1 = "RDpbLfCPsJZ7fiv"
@@ -51,19 +47,29 @@ class Router:
         return output
 
     def getStok(self):
-        request = urllib.request.Request(url=self.loginURL, data=self.postdata, headers=self.header)
-        response = self.opener.open(request)
-        stok = json.loads(response.txt)['stok']
+        response = requests.post(url=self.loginURL, data=self.postdata, headers=self.header)
+        stok = json.loads(response.text)['stok']
 
         return stok
 
     def getList(self, stok):
-        getURL = '%sstok=%s/ds' % stok
-        postdata = '{hosts_info: {table: "online_host"}, method: "get"}'
-        request = urllib.request.Request(url=getURL, data=postdata, headers=self.header)
-        respone = self.opener.open(request)
+        getURL = '%sstok=%s/ds' % (self.loginURL, stok)
+        postdata = '{"hosts_info": {"table": "online_host"}, "method": "get"}'
+        response = requests.post(url=getURL, data=postdata, headers=self.header)
 
-        print(respone.read().decode())
+        print(response.text)
+        # for l in json.loads(response.text)['hosts_info']['online_host']:
+        #     for k, v in l.items():
+        #         for k2, v2 in v.items():
+        #             if k2 == 'hostname':
+        #                 username = urllib.parse.unquote(v2)
+        #             elif k2 == 'ip':
+        #                 ip = v2
+        #             elif k2 == 'up_speed':
+        #                 upspeed = v2
+        #             elif k2 == 'down_speed':
+        #                 downspeed = v2
+        #         print('用户名：' + username, 'IP地址：' + ip, '上传速度：' + upspeed + 'B/s', '下载速度：' + downspeed + 'B/s')
 
 
 if __name__ == '__main__':

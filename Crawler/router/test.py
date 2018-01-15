@@ -73,7 +73,7 @@ def stok(url, encryptPwd):
 
 
 def user_list(url, stok):
-    url = '%sstok=%s/ds' % (url,stok)
+    url = '%sstok=%s/ds' % (url, stok)
     payload = '{"hosts_info":{"table":"host_info"},"method":"get"}'
     response = requests.post(url, data=payload, headers=headers)
     # 返回的response为json结构，内部字符串采用URL编码
