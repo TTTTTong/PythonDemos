@@ -4,6 +4,13 @@ import json
 
 
 class Router:
+    """
+    模拟登陆路由器
+    关键点：
+    1.请求参数
+    2.将js密码加密函数用python重写
+    3.获取stok(获取之后才能进行获取数据等一系列操作)
+    """
     def __init__(self):
         self.loginURL = 'http://192.168.1.1/'
         self.cookie = http.cookiejar.CookieJar()
