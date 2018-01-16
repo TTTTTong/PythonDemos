@@ -20,7 +20,7 @@ class Router:
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:57.0) Gecko/20100101 Firefox/57.0',
             'Content-Type': 'application/json; charset=UTF-8',
         }
-        # 这样直接写麻烦的话可以先写成字典再用json.dumps()转换
+        # 这样直接嫌麻烦的话可以先写成字典再用json.dumps()转换
         # data = {'method': 'do', 'login': {'password': self.encrypt_pwd('7573066')}}
         # self.postdata = json.dumps(data)
         self.postdata = '{"method": "do", "login": {"password": "%s"}}' % self.encrypt_pwd('7573066')
