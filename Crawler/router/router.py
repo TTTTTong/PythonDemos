@@ -1,4 +1,6 @@
 import http.cookiejar
+import urllib
+
 import requests
 import json
 
@@ -19,6 +21,8 @@ class Router:
             'Content-Type': 'application/json; charset=UTF-8',
         }
         # 这样直接写麻烦的话可以先写成字典再用json.dumps()转换
+        # data = {'method': 'do', 'login': {'password': self.encrypt_pwd('7573066')}}
+        # self.postdata = json.dumps(data)
         self.postdata = '{"method": "do", "login": {"password": "%s"}}' % self.encrypt_pwd('7573066')
 
     def encrypt_pwd(self, password):
@@ -57,6 +61,7 @@ class Router:
         response = requests.post(url=self.loginURL, data=self.postdata, headers=self.header)
         stok = json.loads(response.text)['stok']
 
+        # print(response.text)
         return stok
 
     def getList(self, stok):
@@ -64,19 +69,22 @@ class Router:
         postdata = '{"hosts_info": {"table": "online_host"}, "method": "get"}'
         response = requests.post(url=getURL, data=postdata, headers=self.header)
 
-        print(response.text)
-        # for l in json.loads(response.text)['hosts_info']['online_host']:
-        #     for k, v in l.items():
-        #         for k2, v2 in v.items():
-        #             if k2 == 'hostname':
-        #                 username = urllib.parse.unquote(v2)
-        #             elif k2 == 'ip':
-        #                 ip = v2
-        #             elif k2 == 'up_speed':
-        #                 upspeed = v2
-        #             elif k2 == 'down_speed':
-        #                 downspeed = v2
-        #         print('用户名：' + username, 'IP地址：' + ip, '上传速度：' + upspeed + 'B/s', '下载速度：' + downspeed + 'B/s')
+        # print(response.text)
+        for l in json.loads(response.text)['hosts_info']['online_host']:
+            for k, v in l.items():
+                for k2, v2 in v.items():
+                    if k2 == 'hostname':
+                        username = urllib.parse.unquote(v2)
+                    elif k2 == 'ip':
+                        ip = v2
+                    elif k2 == 'up_speed':
+                        upspeed = v2
+                    elif k2 == 'down_speed':
+                        downspeed = v2
+                    elif k2 == 'mac':
+                        mac = v2
+
+                print('用户名: {0:<17}, IP地址: {1}, MAC地址： {4}, 下载速度: {3:>5.0f}KB/s, 上传速度: {2:>3.0f}KB/s'.format(username, ip, int(upspeed)/1024, int(downspeed)/1024, mac))
 
 
 if __name__ == '__main__':
