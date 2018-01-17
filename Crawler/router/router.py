@@ -1,8 +1,8 @@
-import http.cookiejar
 import urllib
-
 import requests
 import json
+import time
+from writeToExcel import write
 
 
 class Router:
@@ -15,7 +15,6 @@ class Router:
     """
     def __init__(self):
         self.loginURL = 'http://192.168.1.1/'
-        self.cookie = http.cookiejar.CookieJar()
         self.header = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:57.0) Gecko/20100101 Firefox/57.0',
             'Content-Type': 'application/json; charset=UTF-8',
@@ -24,6 +23,9 @@ class Router:
         # data = {'method': 'do', 'login': {'password': self.encrypt_pwd('7573066')}}
         # self.postdata = json.dumps(data)
         self.postdata = '{"method": "do", "login": {"password": "%s"}}' % self.encrypt_pwd('7573066')
+
+        # 创建写入excel的对象
+        self.writeObj = write()
 
     def encrypt_pwd(self, password):
         input1 = "RDpbLfCPsJZ7fiv"
@@ -84,9 +86,16 @@ class Router:
                     elif k2 == 'mac':
                         mac = v2
 
-                print('用户名: {0:<17}, IP地址: {1}, MAC地址： {4}, 下载速度: {3:>5.0f}KB/s, 上传速度: {2:>3.0f}KB/s'.format(username, ip, int(upspeed)/1024, int(downspeed)/1024, mac))
+                result = [username, ip, mac, str(int(int(downspeed)/1024))+'KB/s', str(int(int(upspeed)/1024))+'KB/s']
+                self.writeObj.writeAction(result)
+                # print('用户名: {0:<17}, IP地址: {1}, MAC地址： {4}, 下载速度: {3:>5.0f}KB/s, 上传速度: {2:>3.0f}KB/s'
+                # .format(username, ip, int(upspeed)/1024, int(downspeed)/1024, mac))
 
 
 if __name__ == '__main__':
     new = Router()
-    new.getList(new.getStok())
+    stok = new.getStok()
+    while True:
+        new.getList(stok)
+        time.sleep(5)
+        new.writeObj.writeAction(['-'*33]*3 + ['-'*18]*2)
