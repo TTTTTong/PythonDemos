@@ -1,16 +1,12 @@
-import urllib.request
 import re
-import http.cookiejar
-from urllib.parse import urlencode
-
-# 模拟登陆淘宝类
 import webbrowser
+import requests
+import json
 
 
 class Taobao:
     def __init__(self):
         self.loginURL = 'https://login.taobao.com/member/request_nick_check.do'
-        # self.proxyURL =
         self.loginHeaders = {
             'Accept': 'application/json, text/javascript, */*; q=0.01',
             'Accept-Encoding': 'gzip, deflate, br',
@@ -26,7 +22,7 @@ class Taobao:
         self.username = '15529208705'
         self.ua = '106#+YoBgQBLBuDBGQKaBBBBBpZb54rZS0Gi94iYL0pc74/uSCZY5udZt0py7VrYD0Yb549uy0ds5V/Vpb5i5fsZTiGY7Vbf0JkKBBgbylZwsMtlw6SKBB8byltdmW2/BCBEylmi4gO0ylmbyl333p0bkImbyzzz0qphylmRggO0S6lbyl333pWbEzLKBlYh6Dm51E2XtQDc7hcUPZpzAm9s2qAepuO93Uy/SdbeqOZYkNcUPZpzAm9a63a4AjDo9fCxH2L09fGYm4uhQQ+UKfKUd8uSDhpmtC5Tr+ToBQphGhHajYTHpuOM2cAtDhpmtC9EFxzAdDYg7URYTO1YWXbOncUdAet0vjiIyJ97vZGO7URYTOTSBjba63a4AjDpdfi1cyi4+ZLutPXINpOICudzv8avZV+97hJua5y0tZtQtXqPag/5lYLNqvapKjB57mZ1FxQm5TBj+feuOZGbBTtfm6lnBP9AdW0UaJQuoLZYtQ8HjDGYkotuGHmopuQD…KTRylDv34r6KCCmaNJ5+SRGUzUZCCLTfkRkNCoBAVlb1Zzz5ZSpKB3a7TLNRkung+pKXf02RkU5BCB5tcmi4gOLgBDoBFxMWf7kRtMkLDo++DgkR+LKBKTRylDv3AeaKCCmaNJ5+SRGUzUZCCLTfkRkNCoBAVlb1Zzz5bLpKB3a7TLNRkung+pKXf02RkU5BCB5tcmi4gOP9BDoBFxMWf7kRtMkLDo++DgkR+LKBKTRylDv3A9XKCCmaNJ5+SRGUzUZCCLTfkRkrboBKlBb1ZziBCBVtcpG4J/0ymhlQaxGeednfQuoQV1klkQiBCBVtcpo4JK0ymu8QaxGeednfQuoQV1klkQiBCBVtcpq4zY0ymhPQaxGeednfQuoQV1klkQiBCBVtcpd4zK0ymhIQaxGeednfQuoQV1klkQiBCBVtcpf4zp0y4iuQaxGeednfQuoQV1klkQJBCB8tcpf4zp0ylmbq0DvtQroe9OnPAxr2DQGfSQ1BCBoBBKM7Q=='
         self.TPL_password_2 = '414efe534360e0ed2b60fd340bc867235b4b20046cd52afb86bca5050fb282ec2f8f371f63614912cb50fed1d72b4d9d83f48e104fd234926c700efde029f8890360f03a47c4fc4e3381e0602af0410d52012f55c3920a8802b686a1be065e604364f0df68a2a2c3a6eb0cf98a12637300de4030834519e7a8d118adaade5a3c'
-        self.post = post = {
+        self.post = {
             'ua': self.ua,
             'TPL_checkcode': '',
             'CtrlVersion': '1,0,0,7',
@@ -70,24 +66,14 @@ class Taobao:
             'osVer': 'windows|6.1',
             'naviVer': 'firefox|35'
         }
-        # 将post的数据进行编码转换
-        self.postdata = urlencode(self.post).encode('utf-8')
-        # 设置cookie
-        self.cookie = http.cookiejar.LWPCookieJar()
-        # 设置cookie处理器
-        self.cookieHandler = urllib.request.HTTPCookieProcessor(self.cookie)
-        # 设置登陆时用到的opener
-        self.opener = urllib.request.build_opener(self.cookieHandler, urllib.request.HTTPHandler)
 
     # 判断是否需要验证码
     def ifNeedIdenCode(self):
-        request = urllib.request.Request(url=self.loginURL, data=self.postdata, headers=self.loginHeaders)
-        response = self.opener.open(request)
-        content = response.read().decode('utf-8')
-        # 获取响应码
-        status = response.getcode()
+        response = requests.post(url=self.loginURL, data=json.dumps(self.post), headers=self.loginHeaders)
+        content = response.text
+        print(content)
 
-        if status == 200:
+        if response.status_code == 200:
             print(u'获取请求成功！')
             # \u8bf7\u8f93\u5165\u9a8c\u8bc1\u7801 这六个字是请输入验证码的utf-8编码
             pattern = re.compile('\u8bf7\u8f93\u5165\u9a8c\u8bc1\u7801', re.S)
@@ -103,8 +89,8 @@ class Taobao:
             print(u'获取请求失败')
 
     # 获取验证码图片
-    def getdenCodeI(self, page):
-        pattern = re.compile('<img id="J_StandardCode_m.*?data-src="(.*?)"',re.S)
+    def getIdenCode(self, page):
+        pattern = re.compile('<img id="J_StandardCode_m.*?data-src="(.*?)"', re.S)
         result = re.search(pattern, page)
 
         # 匹配到内容且验证码链接不为空
@@ -120,7 +106,7 @@ class Taobao:
         isNeed = self.ifNeedIdenCode()
         if isNeed:
             print(u'需要手动输入验证码')
-            idencode = self.getdenCodeI(isNeed)
+            idencode = self.getIdenCode(isNeed)
 
             if idencode:
                 print(u'获取验证码成功，请在浏览器中输入你看到的验证码')
