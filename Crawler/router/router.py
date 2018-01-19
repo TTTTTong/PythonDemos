@@ -1,6 +1,7 @@
 import urllib
 import requests
 import json
+import datetime
 import time
 from writeToExcel import write
 
@@ -86,13 +87,14 @@ class Router:
                     elif k2 == 'mac':
                         mac = v2
 
-                result = [username, ip, mac, str(int(int(downspeed)/1024))+'KB/s', str(int(int(upspeed)/1024))+'KB/s']
+                result = [username, ip, mac, str(int(downspeed)//1024)+'KB/s', str(int(upspeed)//1024)+'KB/s']
                 self.writeObj.writeAction(result)
                 # print('用户名: {0:<17}, IP地址: {1}, MAC地址： {4}, 下载速度: {3:>5.0f}KB/s, 上传速度: {2:>3.0f}KB/s'
                 # .format(username, ip, int(upspeed)/1024, int(downspeed)/1024, mac))
 
 
 if __name__ == '__main__':
+    print('start at:', datetime.datetime.now(), '......')
     new = Router()
     stok = new.getStok()
     while True:
