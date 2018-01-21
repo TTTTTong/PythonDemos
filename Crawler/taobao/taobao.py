@@ -7,6 +7,7 @@ import json
 class Taobao:
     def __init__(self):
         self.loginURL = 'https://login.taobao.com/member/request_nick_check.do'
+        # self.loginURL = 'https://login.taobao.com/member/login.jhtml'
         self.loginHeaders = {
             'Accept': 'application/json, text/javascript, */*; q=0.01',
             'Accept-Encoding': 'gzip, deflate, br',
@@ -19,15 +20,16 @@ class Taobao:
             'Upgrade-Insecure-Requests': '1',
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:57.0) Gecko/20100101 Firefox/57.0'
         }
-        self.username = '15529208705'
+        self.username = 't15529208705'
         self.ua = '106#+YoBgQBLBuDBGQKaBBBBBpZb54rZS0Gi94iYL0pc74/uSCZY5udZt0py7VrYD0Yb549uy0ds5V/Vpb5i5fsZTiGY7Vbf0JkKBBgbylZwsMtlw6SKBB8byltdmW2/BCBEylmi4gO0ylmbyl333p0bkImbyzzz0qphylmRggO0S6lbyl333pWbEzLKBlYh6Dm51E2XtQDc7hcUPZpzAm9s2qAepuO93Uy/SdbeqOZYkNcUPZpzAm9a63a4AjDo9fCxH2L09fGYm4uhQQ+UKfKUd8uSDhpmtC5Tr+ToBQphGhHajYTHpuOM2cAtDhpmtC9EFxzAdDYg7URYTO1YWXbOncUdAet0vjiIyJ97vZGO7URYTOTSBjba63a4AjDpdfi1cyi4+ZLutPXINpOICudzv8avZV+97hJua5y0tZtQtXqPag/5lYLNqvapKjB57mZ1FxQm5TBj+feuOZGbBTtfm6lnBP9AdW0UaJQuoLZYtQ8HjDGYkotuGHmopuQD…KTRylDv34r6KCCmaNJ5+SRGUzUZCCLTfkRkNCoBAVlb1Zzz5ZSpKB3a7TLNRkung+pKXf02RkU5BCB5tcmi4gOLgBDoBFxMWf7kRtMkLDo++DgkR+LKBKTRylDv3AeaKCCmaNJ5+SRGUzUZCCLTfkRkNCoBAVlb1Zzz5bLpKB3a7TLNRkung+pKXf02RkU5BCB5tcmi4gOP9BDoBFxMWf7kRtMkLDo++DgkR+LKBKTRylDv3A9XKCCmaNJ5+SRGUzUZCCLTfkRkrboBKlBb1ZziBCBVtcpG4J/0ymhlQaxGeednfQuoQV1klkQiBCBVtcpo4JK0ymu8QaxGeednfQuoQV1klkQiBCBVtcpq4zY0ymhPQaxGeednfQuoQV1klkQiBCBVtcpd4zK0ymhIQaxGeednfQuoQV1klkQiBCBVtcpf4zp0y4iuQaxGeednfQuoQV1klkQJBCB8tcpf4zp0ylmbq0DvtQroe9OnPAxr2DQGfSQ1BCBoBBKM7Q=='
         self.TPL_password_2 = '414efe534360e0ed2b60fd340bc867235b4b20046cd52afb86bca5050fb282ec2f8f371f63614912cb50fed1d72b4d9d83f48e104fd234926c700efde029f8890360f03a47c4fc4e3381e0602af0410d52012f55c3920a8802b686a1be065e604364f0df68a2a2c3a6eb0cf98a12637300de4030834519e7a8d118adaade5a3c'
         self.post = {
+            'um_token': 'HV01PAAZ0be28690242f11735a63419200364cdb',
             'ua': self.ua,
             'TPL_checkcode': '',
             'CtrlVersion': '1,0,0,7',
             'TPL_password': '',
-            'TPL_redirect_url': 'http://i.taobao.com/my_taobao.htm?nekot=udm8087E1424147022443',
+            'TPL_redirect_url': 'https://www.taobao.com/',
             'TPL_username': self.username,
             'loginsite': '0',
             'newlogin': '0',
@@ -102,7 +104,6 @@ class Taobao:
             return False
 
     def main(self):
-        # 判断是否需要验证码
         isNeed = self.ifNeedIdenCode()
         if isNeed:
             print(u'需要手动输入验证码')
