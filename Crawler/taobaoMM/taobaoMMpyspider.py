@@ -16,8 +16,8 @@ class Handler(BaseHandler):
 
     def __init__(self):
         self.base_url = 'https://mm.taobao.com/json/request_top_list.htm?page='
-        self.page_num = 1
-        self.total_num = 1
+        self.page_num = PAGE_START
+        self.total_num = PAGE_END
         self.brief = ''
         self.saveObj = save()
 
@@ -35,16 +35,18 @@ class Handler(BaseHandler):
         domain = response.doc('.mm-p-domain-info li > span').text()
         if domain:
             page_url = 'https:' + domain
-            # TODO
-            self.brief = response.doc('.mm-p-middle mm-p-sheShow').text()
-            self.crawl(page_url, callback=self.image_page)
+            brief = response.doc('.mm-p-base-info').text()
+
+            # ！！！！！！！！！！
+            # 回调函数是异步的，所不能直接在imaeg_page()方法中引用brief，要用save字典传递
+            self.crawl(page_url, callback=self.image_page, save={'brief': brief})
 
     def image_page(self, response):
         name = response.doc('.mm-p-model-info-left-top dd > a').text()
         people_dir_path = self.saveObj.mkDir(name)
         if people_dir_path:
             count = 1
-            self.saveObj.saveBrift(self.brief, people_dir_path, name)
+            self.saveObj.saveBrief(response.save['brief'], people_dir_path, name)
             for img in response.doc('.mm-aixiu-content img').items():
                 url = img.attr.src
                 if url:
@@ -81,7 +83,7 @@ class save:
         with open(path, 'wb') as f:
             f.write(content)
 
-    def saveBrift(self, content, dir_path, name):
+    def saveBrief(self, content, dir_path, name):
         filename = dir_path + '/' + name + '.txt'
         with open(filename, 'w') as f:
             f.write(content)
