@@ -5,9 +5,10 @@
 import os
 from pyspider.libs.base_handler import *
 
-PAGE_START = 1
+PAGE_START = 30
 PAGE_END = 30
-DIR_PATH = '/Users/tongxiaoyu/Documents/Picture/PySpider_Taobao'
+DIR_PATH = '/Users/tongxiaoyu/Documents/Picture/PySpider_Taobao2'
+result = '/Users/tongxiaoyu/Documents/Picture/PySpider_Taobao2/result.txt'
 
 
 class Handler(BaseHandler):
@@ -18,7 +19,6 @@ class Handler(BaseHandler):
         self.base_url = 'https://mm.taobao.com/json/request_top_list.htm?page='
         self.page_num = PAGE_START
         self.total_num = PAGE_END
-        self.brief = ''
         self.saveObj = save()
 
     def on_start(self):
@@ -33,6 +33,7 @@ class Handler(BaseHandler):
 
     def detail_page(self, response):
         domain = response.doc('.mm-p-domain-info li > span').text()
+        mmName = response.doc('.mm-p-model-info-left-top dd > a').text()
         if domain:
             page_url = 'https:' + domain
             brief = response.doc('.mm-p-base-info').text()
@@ -40,6 +41,11 @@ class Handler(BaseHandler):
             # ！！！！！！！！！！
             # 回调函数是异步的，所不能直接在imaeg_page()方法中引用brief，要用save字典传递
             self.crawl(page_url, callback=self.image_page, save={'brief': brief})
+            return 'into > ' + mmName + " 's detail page"
+        else:
+            with open(result, 'a') as f:
+                f.write(mmName + '  have not image page\n')
+            return mmName + ' have not image page'
 
     def image_page(self, response):
         name = response.doc('.mm-p-model-info-left-top dd > a').text()
@@ -53,7 +59,11 @@ class Handler(BaseHandler):
                     extension = self.saveObj.getExtension(url)
                     filename = name + str(count) + '.' + extension
                     count += 1
-                    self.crawl(url, callback=self.saveImg, save={'people_dir_path': people_dir_path, 'filename': filename})
+                    self.crawl(url, callback=self.saveImg,
+                               save={'people_dir_path': people_dir_path, 'filename': filename})
+        with open(result, 'a') as f:
+            f.write('begin save > ' + name + " 's image\n")
+        return 'begin save > ' + name + " 's image"
 
     def saveImg(self, response):
         content = response.content
