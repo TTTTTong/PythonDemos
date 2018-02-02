@@ -4,11 +4,13 @@
 # Project: taobaoMMcrawler
 import os
 from pyspider.libs.base_handler import *
+import logging
 
-PAGE_START = 30
+PAGE_START = 1
 PAGE_END = 30
-DIR_PATH = '/Users/tongxiaoyu/Documents/Picture/PySpider_Taobao2'
-result = '/Users/tongxiaoyu/Documents/Picture/PySpider_Taobao2/result.txt'
+DIR_PATH = '/Users/tongxiaoyu/Documents/Picture/PySpider_Taobao3'
+result = '/Users/tongxiaoyu/Documents/Picture/PySpider_Taobao3/result.txt'
+result2 = '/Users/tongxiaoyu/Documents/Picture/PySpider_Taobao3/resul2.txt'
 
 
 class Handler(BaseHandler):
@@ -24,11 +26,17 @@ class Handler(BaseHandler):
     def on_start(self):
         while self.page_num <= self.total_num:
             url = self.base_url + str(self.page_num)
-            self.crawl(url, callback=self.index_page)
+            self.crawl(url, callback=self.index_page, save={'pagnum': self.page_num})
             self.page_num += 1
 
     def index_page(self, response):
+        count = 1
         for each in response.doc('.lady-name').items():
+
+            with open(result2, 'a') as f:
+                f.write('into page > ' + str(response.save['pagnum']) + ' person' + str(count) + '\n')
+                count += 1
+
             self.crawl(each.attr.href, callback=self.detail_page, fetch_type='js')
 
     def detail_page(self, response):
@@ -47,6 +55,8 @@ class Handler(BaseHandler):
                 f.write(mmName + '  have not image page\n')
             return mmName + ' have not image page'
 
+    # 十天内忽视同一请求
+    @config(age=10*24*60*60)
     def image_page(self, response):
         name = response.doc('.mm-p-model-info-left-top dd > a').text()
         people_dir_path = self.saveObj.mkDir(name)
@@ -59,8 +69,8 @@ class Handler(BaseHandler):
                     extension = self.saveObj.getExtension(url)
                     filename = name + str(count) + '.' + extension
                     count += 1
-                    self.crawl(url, callback=self.saveImg,
-                               save={'people_dir_path': people_dir_path, 'filename': filename})
+                    # self.crawl(url, callback=self.saveImg,
+                    #            save={'people_dir_path': people_dir_path, 'filename': filename})
         with open(result, 'a') as f:
             f.write('begin save > ' + name + " 's image\n")
         return 'begin save > ' + name + " 's image"
