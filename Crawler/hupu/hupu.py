@@ -19,15 +19,20 @@ class Handler(BaseHandler):
 
     # @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
-        for each in response.doc('.match-nbalist.active .teamname').items():
+
+        for each in response.doc(
+                'div.content-wrap > div.nba-sidebar-wrap > div.nba-matchList > div.matchlist > div.match-box div#J-t-game .teamname').items():
             self.team.append(each.text())
-        for each in response.doc('.match-nbalist.active .pknum').items():
+
+        for each in response.doc(
+                'div.content-wrap > div.nba-sidebar-wrap > div.nba-matchList > div.matchlist > div.match-box div#J-t-game .pknum').items():
             self.score.append(each.text())
 
         result = list(zip(self.team, self.score))
         for a, b in zip(result[0::2], result[1::2]):
-            print(a[0], ' ', a[1], ':', b[1], ' ', b[0])
-        # self.crawl(each.attr.href, callback=self.detail_page)
+            print(a[0], '', a[1], ':', b[1], '', b[0])
+
+        self.crawl(response.doc('.match-nbalist.active .nbaPrevDay'), callback=self.index_page, fetch_type='js')
 
     @config(priority=2)
     def detail_page(self, response):
