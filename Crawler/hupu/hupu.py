@@ -21,11 +21,13 @@ class Handler(BaseHandler):
     def index_page(self, response):
 
         for each in response.doc(
-                'div.content-wrap > div.nba-sidebar-wrap > div.nba-matchList > div.matchlist > div.match-box div#J-t-game .teamname').items():
+                'div.content-wrap > div.nba-sidebar-wrap > div.nba-matchList > div.matchlist > '
+                'div.match-box div#J-t-game .teamname').items():
             self.team.append(each.text())
 
         for each in response.doc(
-                'div.content-wrap > div.nba-sidebar-wrap > div.nba-matchList > div.matchlist > div.match-box div#J-t-game .pknum').items():
+                'div.content-wrap > div.nba-sidebar-wrap > div.nba-matchList > div.matchlist > '
+                'div.match-box div#J-t-game .pknum').items():
             self.score.append(each.text())
 
         result = list(zip(self.team, self.score))
