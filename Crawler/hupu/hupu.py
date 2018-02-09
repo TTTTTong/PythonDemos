@@ -17,7 +17,6 @@ class Handler(BaseHandler):
     def on_start(self):
         self.crawl('https://nba.hupu.com/', callback=self.index_page, fetch_type='js')
 
-    # @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
 
         for each in response.doc(

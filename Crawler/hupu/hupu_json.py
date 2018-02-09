@@ -15,15 +15,14 @@ class Handler(BaseHandler):
     def __init__(self):
         self.start_url = 'https://nba.hupu.com/match/nba?offset=-'
 
-    @every(minutes=24 * 60)
     def on_start(self):
         self.crawl(self.start_url + str(page), callback=self.index_page, save={'page': page})
 
-    @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
         page = response.save['page']
-        print(response.text)
         page += 1
+        for item in response.json['data']['list']:
+            print(item['home_name'], item['home_score'], ':', item['away_score'], item['away_name'])
         if page < 3:
             self.crawl(self.start_url + str(page), callback=self.index_page, save={'page': page})
 
