@@ -3,7 +3,7 @@ from django.template import RequestContext
 from blog.models import Post
 from django.views.decorators.csrf import csrf_exempt
 from .forms import CommentForm
-import  logging
+import logging
 
 
 # Create your views here.

@@ -20,7 +20,7 @@ Mylog = {
     },
     'handlers': {  # 日志handlers
         'file': {  # 文件handler
-            'level': 'INFO',
+            'level': 'WARNING',
             'class': 'logging.FileHandler',
             'filename': './django.log',
             'formatter': 'verbose',

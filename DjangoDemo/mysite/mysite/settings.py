@@ -153,13 +153,15 @@ HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 # 指定自定义用户模型的位置
 AUTH_USER_MODEL = 'myauth.User'
 
+# 更改login_required装饰器的默认login_url参数，也可以使用login_required(login_url=)方式
+LOGIN_URL = '/login'
 # 如果在地址栏输入URL进行登录或者注销，则无法获取next值，在这里设置跳转到首页
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 
 # 模拟发送邮件到终端
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-from .setting_email import *
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# from mysite.setting_email import *
 
 
 # 设置使用哪些backends对用户凭据进行验证

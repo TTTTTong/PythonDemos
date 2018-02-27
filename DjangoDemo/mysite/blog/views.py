@@ -10,6 +10,7 @@ from django.core.paginator import Paginator
 import markdown
 import logging
 import pygments
+from django.contrib.auth.decorators import login_required
 
 
 # def index(request):
@@ -173,6 +174,7 @@ class TagView(IndexView):
         return super().get_queryset().filter(tags=tag)
 
 
+# @login_required()  # 使用类视图时装饰器放在url代码中
 class PostDetailView(DetailView):
     model = Post
     template_name = 'blog/detail.html'
