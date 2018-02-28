@@ -29,10 +29,10 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -42,7 +42,18 @@ INSTALLED_APPS = [
     'blog',
     'comments',
     'myauth',
+    # django-allauth使用到的app
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
 ]
+
+
+# 前面我们app里添加了django.contrib.sites,需要设置
+SITE_ID = 1
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  # 登录时既可以用用户名也可以用email,选项有"username"、"email"
+# ACCOUNT_EMAIL_REQUIRED = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -68,6 +79,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # allauth needs this from django
+                'django.template.context_processors.request',
             ],
             'libraries': {
                 'blog_tags': 'blog.templatetags.blog_tags',
@@ -154,10 +167,10 @@ HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 AUTH_USER_MODEL = 'myauth.User'
 
 # 更改login_required装饰器的默认login_url参数，也可以使用login_required(login_url=)方式
-LOGIN_URL = '/login'
+# LOGIN_URL = '/login'
 # 如果在地址栏输入URL进行登录或者注销，则无法获取next值，在这里设置跳转到首页
-LOGOUT_REDIRECT_URL = '/'
-LOGIN_REDIRECT_URL = '/'
+# LOGOUT_REDIRECT_URL = '/'
+# LOGIN_REDIRECT_URL = '/'
 
 # 模拟发送邮件到终端
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -168,6 +181,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',  # Django内置的backend
     'myauth.backends.EmailBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
 # -----------------------------------------------------------------------------
 

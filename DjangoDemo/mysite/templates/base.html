@@ -69,7 +69,7 @@
                 {% else %}
                     <p>你还没有登录，请
                         <button class="btn btn-default"><a href="{% url 'login' %}?next={{ request.path }}">登录</a></button>
-                            或者
+                            <!--或者-->
                         <button class="btn btn-default"><a href="{% url 'myauth:register' %}">注册</a></button>
                     </p>
                 {% endif %}

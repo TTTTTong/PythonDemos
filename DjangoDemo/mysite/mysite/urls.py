@@ -19,6 +19,8 @@ from DjangoDemo.mysite.mysite import views
 
 
 urlpatterns = [
+    # django-allauth
+    url(r'^accounts/', include('allauth.urls')),
     url('admin/', admin.site.urls),
     url(r'', include('blog.urls')),
     url(r'', include('comments.urls')),
@@ -28,6 +30,5 @@ urlpatterns = [
 
     # url('^hello/$', views.date),
     # url('^search/$', views.search),
-
 ]
 
