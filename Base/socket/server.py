@@ -7,6 +7,7 @@ s.bind(('127.0.0.1', 9999))
 s.listen(5)
 print('Waitting for connection...')
 
+
 def tcplink(sock, addr):
     print('accept new connect from %s:%s' % addr)
     sock.send(b'welcome')

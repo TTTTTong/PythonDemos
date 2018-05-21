@@ -1,6 +1,6 @@
 import datetime
 import markdown
-from myauth.models import User
+# from myauth.models import User
 from django.db import models
 
 # Create your models here.
@@ -28,9 +28,9 @@ class Post(models.Model):
     create_time = models.DateTimeField(default=datetime.datetime.now)  # now()获取的是服务器第一次运行的时间
     modified_time = models.DateTimeField(default=datetime.datetime.now)
     excerpt = models.CharField(max_length=200, blank=True)  # 摘要
-    category = models.ForeignKey(Category)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)  # Django2.0版本创建外键时需要在后面加上on_delete
     tags = models.ManyToManyField(Tag, blank=True)
-    author = models.ForeignKey(User)
+    # author = models.ForeignKey(User, on_delete=models.CASCADE)
     views = models.PositiveIntegerField(default=0)
 
     def __str__(self):

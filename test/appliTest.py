@@ -1,5 +1,3 @@
-from selenium import webdriver
+from sqlalchemy import create_engine
 
-path = '/usr/local/bin/chromedriver.exe'
-browser = webdriver.Chrome(path)
-browser.get('http://www.google.com')
+engine = create_engine('mysql://root：201919@localhost/scrapy001', echo=True)

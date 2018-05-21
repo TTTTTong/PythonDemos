@@ -9,7 +9,7 @@ class Comment(models.Model):
     text = models.TextField()
     create_time = models.DateTimeField(auto_now_add=True)
 
-    post = models.ForeignKey('blog.post')
+    post = models.ForeignKey('blog.post', on_delete=models.CASCADE)  # Django2.0版本创建外键时需要在后面加上on_delete
 
     def __str__(self):
         return self.text[:20]
