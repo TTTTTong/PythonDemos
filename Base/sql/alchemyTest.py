@@ -19,7 +19,8 @@ class clstest(Base):
     noname = Column(String(50), nullable=False)
 
 
-# 初始化数据库连接,即使创建了Engine, 还是没有创建对数据库的连接
+# 初始化数据库连接,即使创建了Engine, 还是没有创建对数据库的连接。当第一次如Engine.execute()或者Engine.connect()的方法被调用时，
+# Engine才会真正的建立起到数据库的DBAPI连接。实际上，我们一般并不会直接使用Engine。
 engine = create_engine('mysql+mysqlconnector://root:201919@localhost:3306/test')
 # 如果表不存在则创建
 Base.metadata.create_all(engine)
