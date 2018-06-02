@@ -42,15 +42,15 @@ INSTALLED_APPS = [
     # 'books',
     'blog',
     'comments',
-    # 'myauth',
+    'myauth',
     # django-allauth需要的
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.github',
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.github',
 ]
 
-SITE_ID = 13  # https://stackoverflow.com/questions/25468676/django-sites-model-what-is-and-why-is-site-id-1
+# SITE_ID = 13  # https://stackoverflow.com/questions/25468676/django-sites-model-what-is-and-why-is-site-id-1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -77,11 +77,11 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 # `allauth` needs this from django
-                'django.template.context_processors.request',
+                # 'django.template.context_processors.request',
             ],
-            # 'libraries': {
-            #     'blog_tags': 'blog.templatetags.blog_tags',
-            # }
+            'libraries': {
+                'blog_tags': 'blog.templatetags.blog_tags',
+            }
         },
     },
 ]
@@ -145,29 +145,29 @@ STATIC_URL = '/static/'
 
 
 # HAYSTACK配置
-# HAYSTACK_CONNECTIONS = {
-#     'default': {
+HAYSTACK_CONNECTIONS = {
+    'default': {
 #         指定搜索引擎
-        # 'ENGINE': 'blog.whoosh_cn_backend.WhooshEngine',
+        'ENGINE': 'blog.whoosh_cn_backend.WhooshEngine',
         # 指定索引文件存放位置
-        # 'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
-    # },
-# }
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    },
+}
 # 对搜索结果分页
-# HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
 # 指定什么时候更新索引，这里设置每当有文章更新时就更新索引
-# HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 
 # ------------------------------------------认证相关-----------------------------
 # 指定自定义用户模型的位置
-# AUTH_USER_MODEL = 'myauth.User'
+AUTH_USER_MODEL = 'myauth.User'
 
 # 更改login_required装饰器的默认login_url参数，也可以使用login_required(login_url=)方式
-# LOGIN_URL = '/login'
+LOGIN_URL = '/login'
 # 如果在地址栏输入URL进行登录或者注销，则无法获取next值，在这里设置跳转到首页
-# LOGOUT_REDIRECT_URL = '/'
-# LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
 
 # 模拟发送邮件到终端
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -175,11 +175,11 @@ STATIC_URL = '/static/'
 
 
 # 设置使用哪些backends对用户凭据进行验证
-# AUTHENTICATION_BACKENDS = (
-#     'django.contrib.auth.backends.ModelBackend',  # Django内置的backend
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',  # Django内置的backend
 #     'myauth.backends.EmailBackend',
 #     'allauth.account.auth_backends.AuthenticationBackend',
-# )
+)
 # -----------------------------------------------------------------------------
 
 from .setting_log import Mylog
