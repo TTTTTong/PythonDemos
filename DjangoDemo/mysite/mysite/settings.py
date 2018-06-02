@@ -147,7 +147,7 @@ STATIC_URL = '/static/'
 # HAYSTACK配置
 HAYSTACK_CONNECTIONS = {
     'default': {
-#         指定搜索引擎
+        # 指定搜索引擎
         'ENGINE': 'blog.whoosh_cn_backend.WhooshEngine',
         # 指定索引文件存放位置
         'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
@@ -170,15 +170,13 @@ LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 
 # 模拟发送邮件到终端
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # from mysite.setting_email import *
 
 
 # 设置使用哪些backends对用户凭据进行验证
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',  # Django内置的backend
-#     'myauth.backends.EmailBackend',
-#     'allauth.account.auth_backends.AuthenticationBackend',
 )
 # -----------------------------------------------------------------------------
 

@@ -24,6 +24,7 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'', include('blog.urls')),
     url(r'', include('comments.urls')),
+    # Djang内置登录模块
     url(r'', include('django.contrib.auth.urls')),
     url(r'^search/', include('haystack.urls')),
 
