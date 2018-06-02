@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ep!bjl^bjip#c+j$5@(1y%%nj==v5*-gg1)owphh=&-2l!q0=^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.105',]
 
 
 # Application definition
@@ -142,6 +142,8 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
+# 为了把项目中全部静态文件收集到一个目录下
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 # HAYSTACK配置
