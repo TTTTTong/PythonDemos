@@ -8,8 +8,10 @@ https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/
 """
 
 import os
-
 from django.core.wsgi import get_wsgi_application
+import sys
+
+sys.path.append('/Users/tongxiaoyu/Documents/Work/Code/PythonDemos')
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 
