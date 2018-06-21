@@ -1,3 +1,4 @@
-from sqlalchemy import create_engine
+import datetime
+import time
 
-engine = create_engine('mysql://root：201919@localhost/scrapy001', echo=True)
+print type()
