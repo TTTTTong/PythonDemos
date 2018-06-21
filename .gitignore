@@ -4,3 +4,10 @@ DjangoDemo/mysite/mysite/setting_email.py
 *.pyc
 *.xls
 
+.DS_Store
+DjangoDemo/.DS_Store
+BookDemo/.DS_Store
+DjangoDemo/mysite/.DS_Store
+Funny/.DS_Store
+FlaskDemo/.DS_Store
+FlaskDemo/static/.DS_Store
