@@ -4,7 +4,6 @@ import logging
 logging.basicConfig(level=logging.INFO, filename='monitor_info.log', format=' %(asctime)s - %(levelname)s - %(message)s')
 logging.basicConfig(level=logging.ERROR, filename='monitor_error.log', format=' %(asctime)s - %(levelname)s - %(message)s')
 logging.info('start monitor daemon')
-logging.error('start monitor daemon')
 conn = MySQLdb.connect(host='rm-j6ccb77fan1q3p0n8.mysql.rds.aliyuncs.com',
                            user='rshvip', passwd='Aa112255', db='coindata')
 cur = conn.cursor()
