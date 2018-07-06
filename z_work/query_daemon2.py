@@ -16,10 +16,7 @@ logger.info('start monitor daemon')
 
 
 def get_mysqlcur():
-    conn = MySQLdb.connect(host='rm-j6ccb77fan1q3p0n8.mysql.rds.aliyuncs.com',
-                           user='rshvip', passwd='Aa112255', db='coindata')
-    cur = conn.cursor()
-    return cur
+    pass
 
 
 # 从数据库获取各项最新值
@@ -79,7 +76,7 @@ def restart(name):
     logger.error('restart:%s' % name)
 
 
-# 将时间戳转换为(时:分:秒)
+# 时间戳转换为(时:分:秒)格式
 def format_time(timestamp):
     return time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(timestamp))
 
@@ -147,8 +144,8 @@ def trade_handle(exchange_id, exchange):
 
 # depth
 def depth_handle(exchange_id, exchange, symbol):
-    # 保存每个交易所每个交易对的上次查询结果，结果为字典
-    result_dict = {}
+    # 保存交易所每个交易对的上次查询结果，字典形式
+    result_dict = dict()
     result_dict[str(exchange_id)+'_'+symbol] = ''
 
     while True:
@@ -157,6 +154,7 @@ def depth_handle(exchange_id, exchange, symbol):
         logger.info('item is: %s,last result is: %s, current result is: %s' %
                     (str(exchange_id)+':'+symbol+':'+exchange, str(result_dict[str(exchange_id)+'_'+symbol]),
                      str(symbol_rst)))
+        #  3.x没有cmp函数
         if cmp(result_dict[str(exchange_id)+'_'+symbol], symbol_rst) == 0:
                 restart(exchange + '_depth')
                 logger.info('begin sleep 120s after restart %s_depth' % exchange)
@@ -174,45 +172,38 @@ if __name__ == '__main__':
     cur0 = get_mysqlcur()
     sql = "SELECT `id` ,`name`   FROM `exchanges` "
     cur0.execute(sql)
-    # 所有的交易所
+    # 所有的交易所列表(id, 英文名称)
     exchange_list = cur0.fetchall()
     cur0.close()
 
-    # depth特殊处理,因为部分交易所不支持BTC
+    # depth特殊处理,因为部分交易所不支持btc,先查出支持btc的交易所
     depth_cur = get_mysqlcur()
     depth_sql = "SELECT	t1.`exchange_id`,t1.`symbol`,t2.`name_zh`  as exchange_name FROM `symbols` t1" \
                 " JOIN `exchanges` t2 on t1.`exchange_id` =t2.`id` WHERE t1.`base_currency` ='btc' " \
                 " GROUP BY `id` "
-    # 1
-    # btcusdt
-    # 火币pro
-    # 2
-    # tBTCEUR
-    # bitfinex
-    # 3
-    # BTCUSDT
-    # 币安
     depth_cur.execute(depth_sql)
-    exchange_depth_list = depth_cur.fetchall()
+    exchange_supBTC_list = depth_cur.fetchall()
     depth_cur.close()
-    exchange_in_depth = {}
-    for item in exchange_depth_list:
-        exchange_in_depth[item[0]] = item
+    # key:exchange_id, value:exchange_id,symbol,name_zh
+    exchange_sup_btc = {}
+    for item in exchange_supBTC_list:
+        exchange_sup_btc[item[0]] = item
 
     logger.info('start monitor daemon')
-    # 共有交易所数*4个线程
+    # 给每个交易所的每个接口开启一个线程,共有交易所数*4个线程
     for item in exchange_list:
         ticket_thread = Thread(target=ticker_handle, name=item[1] + '_ticker_thread', args=(item[0], item[1]))
         kline_thread = Thread(target=kline_handle, name=item[1] + '_kline_thread', args=(item[0], item[1]))
         trade_thread = Thread(target=trade_handle, name=item[1] + '_trade_thread', args=(item[0], item[1]))
-
-        if exchange_in_depth.has_key(item[0]):
-            depth_thread = Thread(target=depth_handle, name=item[1]+'_depth_thread', args=(exchange_in_depth[item[0]][0],
+        # 当前交易所支持btc
+        if exchange_sup_btc.has_key(item[0]):  # (3.x将 has_key 替换为 in)
+            depth_thread = Thread(target=depth_handle, name=item[1]+'_depth_thread', args=(exchange_sup_btc[item[0]][0],
                                                                                            item[1],
-                                                                                           exchange_in_depth[item[0]][1]))
+                                                                                           exchange_sup_btc[item[0]][1]))
+        # 交易所不支持btc,选出此交易所最近交易中成交额最高的一个交易对
         else:
-            sql_temp = "SELECT `exchange_id` ,`symbol` ,SUM(`usd_vol`) usd_vol FROM `market_history_trade` " \
-                  " WHERE `exchange_id` =%s GROUP BY `symbol` ORDER BY amount DESC LIMIT 1"
+            sql_temp = "SELECT `exchange_id` ,`symbol` ,SUM(`usd_vol`) usd_vol FROm `market_history_trade`" \
+                       " WHERE `exchange_id` =%s  GROUP BY `symbol` ORDER BY usd_vol DESC LIMIT 1;"
             cur_temp = get_mysqlcur()
             cur_temp.execute(sql_temp, args=(item[0],))
             res = cur_temp.fetchone()
