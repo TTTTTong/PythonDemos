@@ -29,7 +29,7 @@ multidict==3.2.0
 mysql-connector==2.1.4
 mysql-connector-python==2.0.4
 olefile==0.44
-Pillow==4.2.1
+Pillow==8.3.2
 powerline-status==2.6
 prettytable==0.7.2
 pygame==1.9.3
