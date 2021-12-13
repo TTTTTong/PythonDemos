@@ -21,7 +21,7 @@ idna==2.6
 itsdangerous==0.24
 jieba==0.39
 Jinja2==2.9.6
-lxml==4.1.0
+lxml==4.6.5
 Mako==1.0.7
 Markdown==2.6.10
 MarkupSafe==1.0
